@@ -17,3 +17,5 @@ vendor/
 2
 test_images
 *-version
+.DS_Store
+.coverage

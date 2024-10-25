@@ -15,11 +15,11 @@ description: "This is the book club page"
 
   <p>The club's leadership is dedicated to building a vibrant and engaging community for everyone. Our initiative aligns with BPD's overall mission to increase participation, empower our members, and provide opportunities for professional growth.</p>
 
-  <h3><strong>Books Completed:</strong></h3>
+  <h2><strong>Books Completed:</strong></h2>
 
   {% for book in site.data.books %}
   <div class="book">
-    <h2>{{ book.title }}</h2>
+    <h3>{{ book.title }}</h3>
     <p><strong>Author:</strong> {{ book.author }}</p>
 
     <h4>Reviews</h4>

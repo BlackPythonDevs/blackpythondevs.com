@@ -6,6 +6,64 @@ Follow these steps and note these guidelines to begin contributing:
 1. Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/BlackPythonDevs/blackpythondevs.github.io/issues).
 1. A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/BlackPythonDevs/blackpythondevs.github.io/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
 
+# Diagram of the infrastructure in use
+
+Below are some diagrams to best explain the file structure of the website, the development structure and how some information are been generated
+
+## Website structure
+
+The diagram below illustrates the main navigation structure of BPD website, showing how the homepage `(Index)` connects to various sections, including the `Home`, `Blog`, `About Us`, `Events`, and `Community`. Each blog article, represented as `Article1` and `Article2`, is linked directly from the `Blog` section.
+
+```mermaid
+flowchart TD
+    Index --> Home
+    Index --> Blog
+    Blog --> Article1
+    Blog --> Article2
+    Index --> AboutUs
+    Index --> Events
+    Index --> Community
+```
+
+## Development structure
+
+The diagram below outlines the file structure of the development environment. The root node represents the main directory, containing essential files and folders like `_config.yml`, `_posts`, `_layouts`, `_includes`, `_data`, `_articles`, and `assets`. Each folder contains further organization of specific files. This will aid contributors in understanding how the project is organized and where different components are located.
+
+```mermaid
+    flowchart TD
+    root --> _config.yml
+    root --> _posts/
+    root --> _layouts/
+    root --> _includes/
+    root --> _data/
+    root --> _articles/
+    root --> assets/
+    root --> about.md
+    root --> index.html
+    root --> tests/
+    _posts/ --> post1
+    _posts/ --> post2
+    assets/ --> css/
+    assets/ --> images/
+    assets/ --> js/
+```
+
+## How some information are generated
+
+The diagram below explains how information is generated for the about page, showing how the `about.md`(source content) connects with other contents, templates and configuration files. The `about.md` file links to `_layouts/default.html` and `_includes/header.html` and `footer.html`, which define the page layout and thus generates a `about.html` this html file can be styled and scripted with files in the `assets/` folder. This diagram clarifies the rendering process and how different files work together to create the final output for the about page.
+
+```mermaid
+    flowchart TD
+    about.md --> _layouts/default.html
+    about.md --> _config.yml
+    _layouts/default.html --> _includes/header.html
+    _layouts/default.html --> _includes/footer.html
+    _layouts/default.html --> about.html
+    _config.yml --> about.html
+    about.html --> assets/css/style.css
+    about.html --> assets/js/script.js
+```
+
 # How to Contribute
 
 ## Fork the repository
@@ -32,7 +90,7 @@ Follow these steps and note these guidelines to begin contributing:
 
 - Once you are done, you can preview your issue by selecting the Preview tab. If you are satisfied with the issue presentation, you can click on the green "Submit new issue" button to create your issue.
 
-- And that's it! If you cose to comment requesting the issue to be assigned to you, wait for a maintainer to do so. You should get an email notification of the issue being assigned to you or you can view the issue assignment in the issue page. It should look similar to this:
+- And that's it! If you choose to comment requesting the issue to be assigned to you, wait for a maintainer to do so. You should get an email notification of the issue being assigned to you or you can view the issue assignment in the issue page. It should look similar to this:
 
   ![issue assignment](/assets/images/issue_assignment.png)
 
@@ -47,7 +105,7 @@ Follow these steps and note these guidelines to begin contributing:
 
 - The web version of VSCode should open in a new tab in your browser:
 
-  ![Black Python Devs Codespace](/assets/images/BlackPythonDevs_codespace.png)
+  ![Black Python Devs Codespace](/assets/images/blackpythondevs_codespace.png)
 
 - Now that you have the code editor set up, you need to install the dependencies. To do this, you have to open the code editor's terminal and run the command `bundle install`.
 

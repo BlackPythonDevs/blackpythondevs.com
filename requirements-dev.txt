@@ -1,8 +1,5 @@
-black
 ephemeral_port_reserve
+gh-issues
 pre-commit
-pytest-pyodide
 pytest-playwright
 pytest-xprocess
-PyGithub
-PyYAML

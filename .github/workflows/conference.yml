@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    if: ${{ github.event.action == 'opened' && startsWith(github.event.issue.title, '[CONFERENCE]') && contains(github.event.issue.labels.*.name, 'conference_accepted') }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -31,7 +32,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install PyGithub PyYAML pre-commit
+        run: pip install -r requirements-dev.txt
 
       - name: Run script
         env:
@@ -51,43 +52,5 @@ jobs:
           delete-branch: true
           title: "[CONFERENCE] Update Conferences"
           labels: |
-            report
             automated pr
-  add_comment:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          token: ${{ env.GITHUB_TOKEN }}
-
-      - name: Setup Python environment
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: pip install PyGithub PyYAML pre-commit
-
-      - name: Run script
-        env:
-          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
-        run: |
-          python _conferences
-          pre-commit run --all-files --show-diff-on-failure
-
-      - name: Add comment to the issue
-        uses: actions/github-script@v6
-        if: ${{ github.event.action == 'opened'  && startsWith(github.event.issue.title, '[CONFERENCE]') && contains(github.event.issue.labels.*.name, 'conference') }} #adds comment only if the issue is created by a user
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const issueNumber = context.payload.issue.number;
-            const comment = "Automated issue, no action is required."
-
-            github.issues.createComment({
-              ...context.repo,
-              issue_number: issueNumber,
-              body: comment
-            });
+            conference

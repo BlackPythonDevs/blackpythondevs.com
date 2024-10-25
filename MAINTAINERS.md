@@ -13,6 +13,7 @@ First off, thank you for considering contributing to Black Python Devs website. 
 - [Accessibility](#accessibility)
 - [Translations](#translations)
 - [Styling](#styling)
+- [Adding New Pages](#adding-new-pages)
 
 # Before You Get Started
 
@@ -147,3 +148,61 @@ Black Python Devs website uses [Pico CSS](https://picocss.com/) for styling. To 
 
 4. **Framework Updates**:
    - When updating Pico CSS, re-evaluate and optimize color profiles
+
+# Adding New Pages
+
+When adding a new page to the website, follow these steps:
+
+1. **Create Content**:
+
+- Add a new Markdown file in the appropriate `_articles/` subdirectory.
+- Include necessary front matter (layout, title, etc.) at the top of the file.
+
+2. **Add Data (if needed)**:
+   If your page requires new data, add a file in the `_data/` directory. Choose the appropriate format:
+
+---
+
+- **JSON (Preferred)**: Use for most structured data, especially when the data structure is complex or nested. JSON is the default choice for new data files.
+
+- **YAML**: Can be used for configuration files or when the data structure is simple and human readability is a priority. YAML is particularly useful for data that doesn't require complex nesting.
+
+- **CSV**: Use for large, tabular datasets, particularly when the data comes from or might need to be edited in spreadsheet software. Examples include:
+  - Annual sponsorship numbers
+  - Event attendance records
+  - Membership statistics over time
+  - Any data that is likely to be maintained or updated in a spreadsheet
+
+---
+
+When in doubt, prefer **JSON** for new data types unless there's a compelling reason to use **YAML** or **CSV**.
+
+3. **Update Routes**:
+
+- Open `tests/conftest.py`.
+- Add your new page's route to the `ROUTES` list:
+
+```python
+ROUTES = [
+    "",
+    "blog",
+    "about",
+    "events",
+    "community",
+    "leadership",
+    "book-club",
+    "your-new-page",  # Add your new route here
+]
+```
+
+4. **Create Navigation Links**:
+
+- Update relevant navigation menus to include your new page.
+
+5. **Test**:
+
+- Make sure your new page renders correctly and all links work as expected.
+
+---
+
+Remember, when in doubt, don't hesitate to ask for help in our Discord community or in a GitHub issue!

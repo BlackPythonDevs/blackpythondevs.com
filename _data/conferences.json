@@ -1,0 +1,22 @@
+[
+  {
+    "conference_name": "PyconUg",
+    "url": "https://ug.pycon.org",
+    "conference_start_date": "2024-10-09",
+    "conference_end_date": "2024-10-13",
+    "conference_type": "in-person",
+    "conference_location": "NWSC International Resource Centre (IREC), Kampala, Uganda",
+    "summary": "The conference is a five-day event, 9-13 October. PyconUganda inherit this tradition of an annual event that brings together python enthusiasts, tech audiences and technology business in uganda and around the world.",
+    "speaking": null
+  },
+  {
+    "conference_name": "PyHo",
+    "url": "https://twitter.com/pythonho",
+    "conference_start_date": "2024-10-25",
+    "conference_end_date": "2024-10-26",
+    "conference_type": "in-person",
+    "conference_location": "University of Health and Allied Sciences, Trafalgar,  Ho.  Ho, Volta Region, Ghana.",
+    "summary": "PyHo, champion the leverage of Python in education promote diversity and inclusion from underrepresented communities within\nthe/beyond our region. Provide the foundational platform for new and experienced speakers alike to share ideas and resources.",
+    "speaking": null
+  }
+]

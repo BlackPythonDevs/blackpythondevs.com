@@ -1,23 +1,30 @@
 {% if site.data.conferences.size > 0 %}
+<div class="conference grid">
   {% for conference in site.data.conferences %}
-<div class="conference">
   <article>
     <h2>
-      <a href="{{ conference.url }}">{{ conference.name }}</a> ({{ conference.dates }}) {% if conference.location != "_No response_" %}- {{ conference.location }}{% endif %}
+      <a href="{{ conference.url }}">{{ conference.conference_name }}</a>
     </h2>
-    <p>Type: {{ conference.type }}</p>
+    <p>
+      <strong>{{ conference.conference_start_date }} - {{ conference.conference_end_date }}</strong>
+      {% if conference.conference_location != "_No response_" %}
+      <br />
+      <strong>{{ conference.conference_location }}</strong>
+      </p>
+      {% endif %}
+    <p>Type: {{ conference.conference_type }}</p>
     {% if conference.summary != "_No response_" %}
       {{ conference.summary | markdownify }}
     {% endif %}
-    {% if conference.speaking != "_No response_" %}
+    {% if conference.speaking %}
       <h3>Speaking:</h3>
       <li>
       {{ conference.speaking | markdownify }}
       </li>
     {% endif %}
   </article>
-</div>
   {% endfor %}
+</div>
 {% else %}
 <b>No conferences</b>
 {% endif %}
