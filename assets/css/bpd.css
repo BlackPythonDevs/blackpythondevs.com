@@ -489,7 +489,8 @@ img.donation-photo {
 }
 
 img.featured-image {
-  max-height: 20rem;
+  max-height: 1048px;
+  max-width: 1866px;
 }
 
 ul.speaking-list {
