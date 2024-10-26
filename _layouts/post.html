@@ -5,6 +5,10 @@ layout: default
 <div class="hero-banner">
   <img src="{{page.featured_image}}" class="featured-image">
 </div>
+{%- else -%}
+<div class="hero-banner">
+    <img src="/assets/images/bpd_stacked.png" class="featured-image">
+</div>
 {%- endif -%}
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
