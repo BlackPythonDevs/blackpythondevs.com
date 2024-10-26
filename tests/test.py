@@ -99,3 +99,16 @@ def test_mailto_bpdevs(page_url: tuple[Page, str]) -> None:
     page.goto(live_server_url)
     mailto = page.get_by_role("link", name="email")
     expect(mailto).to_have_attribute("href", "mailto:contact@blackpythondevs.com")
+
+
+def test_carousel_displayed(page_url: tuple[Page, str]) -> None:
+    page, live_server_url = page_url
+    page.goto(live_server_url)
+
+    carousel = page.locator(".carousel")
+    expect(carousel).to_be_visible()
+
+    next_button = page.locator(".carousel-control-next")
+    prev_button = page.locator(".carousel-control-prev")
+    expect(next_button).to_be_visible()
+    expect(prev_button).to_be_visible()
