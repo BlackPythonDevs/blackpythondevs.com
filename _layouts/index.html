@@ -3,9 +3,6 @@ layout: default
 ---
 <div class="home">
   {% assign t = site.data.locales[page.lang][page.lang] %} {% if page.title %} {% assign header = page.title %} {% else %} {% assign header = site.title %} {% endif %}
-  <!-- <article class="hero">
-    <div class="hero-text">{{ t.index.lead }}</div>
-  </article> -->
   <header>
     <div id="postSlider" class="carousel slide slider-container" data-bs-ride="carousel">
       <div class="carousel-inner">
