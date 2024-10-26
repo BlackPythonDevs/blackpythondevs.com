@@ -12,7 +12,7 @@ def page_url(xprocess, url_port):
     url, port = url_port
 
     class Starter(ProcessStarter):
-        timeout = 4
+        timeout = 20
         # Start the process
         args = [
             "bundle",
