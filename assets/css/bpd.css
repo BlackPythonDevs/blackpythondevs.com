@@ -527,13 +527,11 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-image: url("/assets/images/hero-bpd-background.jpg"); */
   background-color: #222;
   padding: 40px;
   border-radius: 10px;
   margin: 0 auto;
-  width: 85%;
-  /* max-width: 1000px; */
+  width: 100%;
 }
 .email-circle {
   width: 250px;
