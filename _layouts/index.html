@@ -6,7 +6,8 @@ layout: default
   <header>
     <div id="postSlider" class="carousel slide slider-container" data-bs-ride="carousel">
       <div class="carousel-inner">
-        {% for post in site.posts %}
+        {% assign recent_posts = site.posts | slice: 0, 3 %}
+        {% for post in recent_posts %}
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
           <div class="email-circle">
             <img src="{{ post.featured_image | default: post.content | split: '!' | first | split: '(' | last | split: ')' | first | default: 'default-image.jpg' }}" alt="{{ post.title }}">
