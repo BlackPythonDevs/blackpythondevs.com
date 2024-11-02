@@ -9,7 +9,7 @@ layout: default
         {% assign recent_posts = site.posts | slice: 0, 3 %}
         {% for post in recent_posts %}
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
-          <div class="email-circle">
+          <div class="image-circle">
             <img src="{{ post.featured_image | default: '/assets/images/bpd_stacked.png' }}" alt="{{ post.title }}">
           </div>
           <h3 class="post-title">{{ post.title }}</h3>
