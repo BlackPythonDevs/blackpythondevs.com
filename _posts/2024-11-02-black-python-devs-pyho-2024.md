@@ -12,11 +12,11 @@ BPD’s dedication to serving as a safe and inclusive space for Black “Pythoni
 
 We appreciate Abigail Afi Gbadago, a BPD executive council member for gracing us with her presence during our #Sponsors talk session. Sharing invaluable insights into BPD’s initiatives and the opportunities for participation and collaboration within our local user group.
 
-![Black Python Devs PyHo 2024](/assets/images/bpd_pyho_2024_2.jpeg)
+![Woman on stage looking at Black Python Devs Logo on screen](/assets/images/bpd_pyho_2024_2.jpeg)
 
 Looking ahead, we envisage to continue our collective journey to shaping the future of Python’s open source ecosystem from a collaboration mindset over competition. BPD’s focus on growth and collaboration aligns perfectly with our shared goals and we look forward to working together to achieve even greater heights for the community both locally and globally.
 
-![Black Python Devs PyHo 2024](/assets/images/bpd_pyho_2024_3.jpg)
+![a group photo of PyHo 2024 attendees](/assets/images/bpd_pyho_2024_3.jpg)
 
 We celebrate the power of Python and the spirit of community and the positive impact of initiatives like Black Python Devs.
 
