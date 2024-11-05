@@ -19,8 +19,11 @@ From 10:15 to 11:00 a.m., Jay Miller gave a State of BPD highlighting our leader
 
 At midday, we took a 2-hour lunch break.
 
-After lunch, we had a keynote address by ![Wesley Faulkner on Leadership vs Management](https://www.youtube.com/watch?v=A9HkxFDH1Cs).
+After lunch, we had a keynote address by Wesley Faulkner on Leadership vs Management
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A9HkxFDH1Cs?si=fe_OK9-r9xNF5q-3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br>
+<br>
 ![Black Python Devs Ghana Connect Meetup](/assets/images/bpd-leadership-summit-2.jpeg)
 
 Right after, there was a Coffee Break at 10:15 - 10:30.
