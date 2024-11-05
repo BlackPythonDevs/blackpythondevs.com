@@ -1,10 +1,13 @@
 ---
-layout: "post"
-lang: "en"
-author: "Anotida Expected Msiiwa"
-title: "Abigail Mesrenyame Dogbe Honored with Inaugural Outstanding PyLady Award"
+author: Anotida Expected Msiiwa
 date: 2024-01-25
-featured_image: "/assets/images/opa_winners_2024.png"
+description: Meet Abigail Mesrenyame Dogbe, a dedicated member of Black Python Devs
+  and recipient of the Inaugural Outstanding PyLady award. Learn how her exceptional
+  contributions to open-source community are inspiring women in STEM.
+featured_image: /assets/images/opa_winners_2024.png
+lang: en
+layout: post
+title: Abigail Mesrenyame Dogbe Honored with Inaugural Outstanding PyLady Award
 ---
 
 Every year, the PyLadies community recognizes individuals for their remarkable contributions to the open-source community with the [Inaugural Outstanding PyLady award](https://kit.pyladies.com/en/latest/global/award.html). This year, we are thrilled to announce that [Abigail Mesrenyame Dogbe](https://mesrenyamedogbe.hashnode.dev), a dedicated member of Black Python Devs, has been honored with this prestigious award at PyCon 2024 in Pittsburgh, PA.

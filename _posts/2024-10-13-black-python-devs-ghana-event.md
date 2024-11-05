@@ -1,9 +1,11 @@
 ---
-title: "Black Python Devs Ghana Connect Meetup"
-date: 2024-10-13
 author: Abigail Afi Gbadago
-lang: en
+date: 2024-10-13
+description: Join us for a heartwarming story of innovation and perseverance in Ghana.
+  Meet the individuals who chose Python to turn their passions into reality.
 featured_image: /assets/images/bpd_ghana_connect1.webp
+lang: en
+title: Black Python Devs Ghana Connect Meetup
 ---
 
 On Saturday, August 17th, 2024, Stancy and Afi hosted the Black Python Devs Ghana Connect Meetup at Accra Mall, Pizza Inn. The event started at 1 PM with a warm introduction and welcome remarks from our moderator, Theresa Seyram Agbenyegah. We had an enthusiastic turnout of 22 participants, each of whom introduced themselves during an icebreaker session.

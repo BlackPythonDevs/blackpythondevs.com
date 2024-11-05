@@ -1,9 +1,12 @@
 ---
-title: "What is the US Conference City Diversity Metric"
-layout: post
-lang: en
-date: 2023-11-11
 author: Jay Miller
+date: 2023-11-11
+description: Discover how the US Conference City Diversity Metric can inform your
+  event's location and create a more inclusive experience. Learn what cities score
+  well on diversity and why.
+lang: en
+layout: post
+title: What is the US Conference City Diversity Metric
 ---
 
 In 2022 at DjangoCon I took a look at the location of all of the PyCon US locations and their makeup by race. I highlighted that in the first 10 years of PyCon's existence, 9 of those 10 events were in culturally diverse cities like Atlanta, Washington DC and Chicago. The second half was during Python's boom and the need for larger venues started pushing conferences to more affordable areas with large international airports. These were places like Salt Lake City, Portland, and Montreal.

@@ -1,9 +1,11 @@
 ---
-title: "Black Python Devs Represent in DSF Elections"
-date: 2023-11-13
 author: Jay Miller
+date: 2023-11-13
+description: Discover how Black Python Devs are shaping the DSF Elections and making
+  a lasting impact in the industry.
 lang: en
 layout: post
+title: Black Python Devs Represent in DSF Elections
 ---
 
 The DSF Board Elections have opened and voting is available for DSF members now until 27 November 2023 (Anywhere on Earth).

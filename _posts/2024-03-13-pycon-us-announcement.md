@@ -1,8 +1,11 @@
 ---
-layout: post
-lang: en
-title: "Black Python Devs x PyCon US"
 date: 2024-03-13
+description: Join us at PyCon US as we celebrate diversity in the Python community.
+  Discover our initiatives, meet fellow Black developers, and be part of shaping a
+  more inclusive global community.
+lang: en
+layout: post
+title: Black Python Devs x PyCon US
 ---
 
 PyCon US is coming and Black Python Devs will represented strongly.

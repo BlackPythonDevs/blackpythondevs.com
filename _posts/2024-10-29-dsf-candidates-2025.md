@@ -1,10 +1,12 @@
 ---
-title: "Black Python Devs Running for the DSF"
-date: 2024-10-29
 author: Jay Miller
+date: 2024-10-29
+description: Discover how a diverse group of Black Python Developers are shaping the
+  future of Django and Python communities worldwide.
+featured_image: /assets/images/django-foundation-election.webp
 lang: en
 layout: post
-featured_image: /assets/images/django-foundation-election.webp
+title: Black Python Devs Running for the DSF
 ---
 
 The [DSF Board Candidates have been announced](https://www.djangoproject.com/weblog/2024/oct/28/2025-dsf-board-candidates/) and voting is now open for DSF members now until 15 November (Anywhere on Earth).

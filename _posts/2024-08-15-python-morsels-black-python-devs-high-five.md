@@ -1,8 +1,11 @@
 ---
-title: Black Python Devs Partners with Python Morsels for High Five Launch
-date: 2024-08-15
-lang: en
 author: Jay Miller
+date: 2024-08-15
+description: Kickstart your Python skills with a comprehensive 10-week course offering
+  daily exercises, community support, and real-world applications. Get $30 off with
+  our exclusive discount code!
+lang: en
+title: Black Python Devs Partners with Python Morsels for High Five Launch
 ---
 
 We’re thrilled to announce a that Python Morsels is offering us an affiliate partnership for [Python High Five](https://www.pythonmorsels.com/high-five/), a comprehensive 10-week Python course starting in early September.
