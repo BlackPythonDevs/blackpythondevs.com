@@ -1,5 +1,17 @@
-ephemeral_port_reserve
+# page-generation
 gh-issues
+
+# linting
 pre-commit
+
+# Automation
+langchain
+langchain_community
+langchain_ollama
+rich
+python-frontmatter
+
+# Testing
+ephemeral_port_reserve
 pytest-playwright
 pytest-xprocess
