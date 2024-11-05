@@ -20,8 +20,10 @@
       </h3>
       <span class="post-meta">{{ post.date | date: date_format }}</span>
       {%- if site.show_excerpts -%}
-      {{ post.excerpt }}
-      {%- endif -%}
+      <p>
+      {{ post.description }}
+     </p>
+    {%- endif -%}
     </div>
       {%- assign count = count | plus:1 -%}
     {%- endfor -%}

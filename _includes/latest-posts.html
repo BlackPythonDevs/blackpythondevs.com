@@ -7,8 +7,10 @@
     <h3>
       <a class="" href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a>
     </h3>
-    <span class="post-meta">{{ post.date | date: date_format }}</span>
-    {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+    <p>{{ post.date | date: date_format }}</p>
+    {%- if site.show_excerpts -%}
+    <p style="margin-bottom: 2rem">{{ post.description}}</p>
+    {%- endif -%}
   </div>
   {%- assign count = count | plus:1 -%} {%- endif -%} {%- endfor -%}
 </article>
