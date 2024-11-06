@@ -1,9 +1,8 @@
 ---
 author: Jay Miller
 date: 2023-12-14
-description: Meet the winners of the Malcolm Tredinnick Memorial Prize, recognized
-  for their outstanding service to community through innovative Django projects and
-  initiatives.
+description: Discover how the innovative team at Djangonaut Space is making a lasting
+  impact on the Django community with sustainable initiatives and groundbreaking projects.
 lang: en
 layout: post
 title: Dawn Wages, Sarah Abderemane and Djangonaut Space Awarded the Malcolm Tredinnick

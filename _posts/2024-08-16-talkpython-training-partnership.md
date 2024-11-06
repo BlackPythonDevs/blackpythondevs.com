@@ -1,9 +1,11 @@
 ---
 author: Jay Miller
 date: 2024-08-16
-description: Discover how TalkPython Training is supporting diversity in Python programming
-  with a new partnership that benefits both your learning and their mission.
+description: Learn how TalkPython Training's new partnership with Black Python Devs
+  is driving greater diversity and benefiting learners through a unique opportunity
+  to support both your education and the community.
 lang: en
+layout: post
 title: Talk Python Training Partners with Black Python Devs
 ---
 

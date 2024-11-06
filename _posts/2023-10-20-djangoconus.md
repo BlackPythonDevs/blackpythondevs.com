@@ -1,9 +1,7 @@
 ---
 date: 2023-10-20
-description: Join us for a behind-the-scenes look at DjangoCon US 2023, where a vibrant
-  community came together to celebrate diversity and inclusivity in tech. Discover
-  how the event prioritized representation and created meaningful connections among
-  attendees.
+description: Join us for a behind-the-scenes look at DjangoCon US 2023, where diversity
+  and inclusion came together to shape a powerful community of Python developers.
 lang: en
 layout: post
 title: DjangoCon US 2023

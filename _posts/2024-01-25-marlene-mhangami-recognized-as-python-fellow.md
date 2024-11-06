@@ -1,8 +1,8 @@
 ---
 date: 2024-01-25
-description: Meet Marlene Mhangami, a devoted leader in the Python community, recognized
-  by the Python Software Foundation for her outstanding contributions to diversity
-  and inclusion.
+description: Meet Marlene Mhangami, a trailblazing leader in the Python community
+  recognized for her exceptional contributions as PSF Chair and DEI Working Group
+  member, now highlighted as a Q3 2023 Python Fellow.
 lang: en
 layout: post
 title: Marlene Mhangami Recognized as Python Fellow for Q3 2023

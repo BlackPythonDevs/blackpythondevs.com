@@ -9,17 +9,17 @@ from langchain_text_splitters.character import RecursiveCharacterTextSplitter
 
 
 llm = OllamaLLM(model="llama3.2")
-prompt_template = """Write a subtle description to encourage the reader to read the blog post. 
+prompt_template = """Write a subtle description to encourage the reader to read the blog post.
 
 {text}
 
 ---
 
 Instructions:
-These are professional updates from Black Python Devs.
-Use no more than 200 characters about the content.
-Avoid clickbait phrases
 Only return the response, no confirmation.
+These are professional updates from Black Python Devs.
+Use no more than 1 sentence.
+Avoid clickbait phrases
 """
 prompt = PromptTemplate(template=prompt_template, input_variables=["text"])
 chain = load_summarize_chain(llm=llm, prompt=prompt)
@@ -35,8 +35,8 @@ for file in track(pathlib.Path("_posts").glob("*.md"), description="running"):
     fm_file = frontmatter.loads(file.read_text())
     doc = TextLoader(file.absolute()).load()[0]
 
-    if "description" in fm_file.keys():
-        continue
+    #    if "description" in fm_file.keys():
+    #    continue
     summary = chain.invoke(input=splitter.split_documents([doc]))
-    fm_file["description"] = summary["output_text"].strip('"')
+    fm_file["description"] = summary["output_text"].strip('"').strip("\n")
     file.write_text(frontmatter.dumps(fm_file))

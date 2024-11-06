@@ -1,7 +1,8 @@
 ---
 date: 2024-05-22
-description: "Exploring the nuances of inclusive language: why Black, Colored, and
-  coloured coexist in our community."
+description: Join us as we explore a nuanced approach to inclusive language, examining
+  the complexities of terms like "Black", "Colored", and "coloured" in describing
+  our community members.
 featured_image: /assets/images/BPD_PyCon_2024_cropped.jpg
 lang: en
 layout: post

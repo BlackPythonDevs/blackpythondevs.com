@@ -3,6 +3,7 @@ gh-issues
 
 # linting
 pre-commit
+typer
 
 # Automation
 langchain

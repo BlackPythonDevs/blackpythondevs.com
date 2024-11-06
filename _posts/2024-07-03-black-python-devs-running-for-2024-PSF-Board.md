@@ -1,9 +1,9 @@
 ---
 author: Anotida Expected Msiiwa
 date: 2024-07-03
-description: Meet four exceptional Black Python developers running for the Python
-  Software Foundation Board, dedicated to promoting diversity and inclusion in the
-  Python community.
+description: Join us in learning about four exceptional Black Python developers who
+  are shaping the future of the Python community and running for a crucial role on
+  the Python Software Foundation Board.
 lang: en
 layout: post
 title: Black Python Developers Running for the 2024 Python Software Foundation Board

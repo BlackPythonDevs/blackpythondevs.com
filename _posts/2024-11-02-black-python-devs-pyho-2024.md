@@ -1,10 +1,11 @@
 ---
 author: Kafui Alordo
 date: 2024-11-02
-description: Discover how Black Python Devs is amplifying underrepresented voices
-  and fostering community in the Python ecosystem.
+description: Discover how Black Python Devs is redefining the future of Python's open
+  source ecosystem by creating a safe and inclusive space for underrepresented developers.
 featured_image: /assets/images/bpd_pyho_2024.jpg
 lang: en
+layout: post
 title: "Amplifying Voices and Fostering Community: Black Python Devs as a Catalyst."
 ---
 

@@ -1,8 +1,9 @@
 ---
 author: Jay Miller
 date: 2024-10-29
-description: Discover how a diverse group of Black Python Developers are shaping the
-  future of Django and Python communities worldwide.
+description: Discover how a new generation of Black Python Developers is shaping the
+  future of Django and the global tech community, and learn about their inspiring
+  stories and impact on the world.
 featured_image: /assets/images/django-foundation-election.webp
 lang: en
 layout: post

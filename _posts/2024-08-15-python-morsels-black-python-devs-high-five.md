@@ -1,10 +1,11 @@
 ---
 author: Jay Miller
 date: 2024-08-15
-description: Kickstart your Python skills with a comprehensive 10-week course offering
-  daily exercises, community support, and real-world applications. Get $30 off with
-  our exclusive discount code!
+description: Discover how to kickstart your Python skills with a comprehensive 10-week
+  course, featuring daily exercises, community support, and real-world applications
+  - now available with an exclusive $30 off offer.
 lang: en
+layout: post
 title: Black Python Devs Partners with Python Morsels for High Five Launch
 ---
 

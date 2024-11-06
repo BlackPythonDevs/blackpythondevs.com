@@ -1,10 +1,11 @@
 ---
 author: Abigail Afi Gbadago
 date: 2024-10-13
-description: Join us for a heartwarming story of innovation and perseverance in Ghana.
-  Meet the individuals who chose Python to turn their passions into reality.
+description: Discover how Ghanaian developers turned their passion for coding into
+  a career with inspiring stories of perseverance and innovation in Python.
 featured_image: /assets/images/bpd_ghana_connect1.webp
 lang: en
+layout: post
 title: Black Python Devs Ghana Connect Meetup
 ---
 

@@ -1,9 +1,9 @@
 ---
 author: Jay Miller
 date: 2023-11-11
-description: Discover how the US Conference City Diversity Metric can inform your
-  event's location and create a more inclusive experience. Learn what cities score
-  well on diversity and why.
+description: Discover how the US Conference Diversity Metric can inform your event's
+  location and create a more inclusive experience for attendees, with expert analysis
+  from Jay Miller.
 lang: en
 layout: post
 title: What is the US Conference City Diversity Metric

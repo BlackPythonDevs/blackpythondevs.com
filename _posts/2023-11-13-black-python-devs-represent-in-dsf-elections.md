@@ -1,8 +1,8 @@
 ---
 author: Jay Miller
 date: 2023-11-13
-description: Discover how Black Python Devs are shaping the DSF Elections and making
-  a lasting impact in the industry.
+description: Find out how the growing presence of Black Python Developers is shaping
+  the future of diversity in the tech industry through the DSF Elections.
 lang: en
 layout: post
 title: Black Python Devs Represent in DSF Elections

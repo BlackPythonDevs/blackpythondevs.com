@@ -1,8 +1,7 @@
 ---
 date: 2024-03-13
-description: Join us at PyCon US as we celebrate diversity in the Python community.
-  Discover our initiatives, meet fellow Black developers, and be part of shaping a
-  more inclusive global community.
+description: Explore how Black Python Devs is shaping the future of the Python community
+  through a range of events and activities at PyCon US.
 lang: en
 layout: post
 title: Black Python Devs x PyCon US

@@ -1,8 +1,9 @@
 ---
 author: Jay Miller
 date: 2023-12-14
-description: Meet Sarah Abderemane, a new member of the Django Software Foundation
-  Board of Directors, representing the thriving Black Python Devs community.
+description: Discover how Sarah Abderemane's selection to the Django Software Foundation
+  Board of Directors is a significant milestone for the thriving Black Python Devs
+  community.
 lang: en
 layout: post
 title: Sarah Abderemane Selected to the Django Software Foundation Board of Directors

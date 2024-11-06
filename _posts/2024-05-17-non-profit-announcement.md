@@ -1,7 +1,7 @@
 ---
 date: 2024-05-16
-description: Discover how a historic partnership between GNOME Foundation and Black
-  Python Devs is empowering tech diversity and innovation.
+description: Discover how a historic partnership between two influential organizations
+  is revolutionizing tech diversity and innovation in the open-source world.
 featured_image: /assets/images/BPD_STACKED_featured.png
 lang: en
 layout: post

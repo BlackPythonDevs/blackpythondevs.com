@@ -32,3 +32,11 @@ repos:
     rev: 23.9.1
     hooks:
       - id: black
+  - repo: local
+    hooks:
+      - id: check-for-layout
+        name: check-for-layout
+        files: _posts/.*.md
+        entry: python update_layout.py check
+        language: python
+        additional_dependencies: [typer, python-frontmatter, typing-extensions]

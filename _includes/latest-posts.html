@@ -9,7 +9,7 @@
     </h3>
     <p>{{ post.date | date: date_format }}</p>
     {%- if site.show_excerpts -%}
-    <p style="margin-bottom: 2rem">{{ post.description}}</p>
+    <p class="post-description" style="margin-bottom: 2rem">{{ post.description}}</p>
     {%- endif -%}
   </div>
   {%- assign count = count | plus:1 -%} {%- endif -%} {%- endfor -%}
