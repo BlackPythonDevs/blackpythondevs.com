@@ -1,9 +1,12 @@
 ---
-title: "Amplifying Voices and Fostering Community: Black Python Devs as a Catalyst."
-date: 2024-11-02
 author: Kafui Alordo
-lang: en
+date: 2024-11-02
+description: Discover how Black Python Devs is redefining the future of Python's open
+  source ecosystem by creating a safe and inclusive space for underrepresented developers.
 featured_image: /assets/images/bpd_pyho_2024.jpg
+lang: en
+layout: post
+title: "Amplifying Voices and Fostering Community: Black Python Devs as a Catalyst."
 ---
 
 We’re ecstatically pleased as a community to share in the celebration of the incredible impact of Black Python Devs (BPD) on PyHo 2024 (the regional Python community conference of the people of Volta). Through an unwavering commitment to empower underrepresented/underserved developers.

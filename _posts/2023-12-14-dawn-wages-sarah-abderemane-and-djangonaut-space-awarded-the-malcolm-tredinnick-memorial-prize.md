@@ -1,9 +1,12 @@
 ---
-title: "Dawn Wages, Sarah Abderemane and Djangonaut Space Awarded the Malcolm Tredinnick Memorial Prize"
-date: 2023-12-14
 author: Jay Miller
+date: 2023-12-14
+description: Discover how the innovative team at Djangonaut Space is making a lasting
+  impact on the Django community with sustainable initiatives and groundbreaking projects.
 lang: en
 layout: post
+title: Dawn Wages, Sarah Abderemane and Djangonaut Space Awarded the Malcolm Tredinnick
+  Memorial Prize
 ---
 
 Each year the _Django Software Foundation_, selects a person or group that exemplifies the outstanding service to community as shown by the award's namesake.

@@ -1,8 +1,10 @@
 ---
-layout: post
-lang: en
-title: "DjangoCon US 2023"
 date: 2023-10-20
+description: Join us for a behind-the-scenes look at DjangoCon US 2023, where diversity
+  and inclusion came together to shape a powerful community of Python developers.
+lang: en
+layout: post
+title: DjangoCon US 2023
 ---
 
 In Durham, North Carolina, approximately 300 Django developers gathered from all over the world for [DjangoCon US](https://2023.djangocon.us/). This event showcased the knowledge of the community and celebrated its cultural diversity and the diversity of its hosting city. The event was located at the Marriot Convention Center, in the heart of the city. There were many resturants and smaller attractions.

@@ -14,6 +14,7 @@ First off, thank you for considering contributing to Black Python Devs website. 
 - [Translations](#translations)
 - [Styling](#styling)
 - [Adding New Pages](#adding-new-pages)
+- Post Validation
 
 # Before You Get Started
 
@@ -202,6 +203,34 @@ ROUTES = [
 5. **Test**:
 
 - Make sure your new page renders correctly and all links work as expected.
+
+## Layout Validation
+
+### Automatic Layout Updates
+
+To ensure consistency across all blog posts, we've implemented automatic layout validation and updating functionality. This helps maintain proper frontmatter configuration for all Markdown files in the `_posts` directory.
+
+### Tools and Features
+
+#### `update_layout.py` CLI Tool
+
+- Checks and applies missing layout fields to post files
+- Can process multiple posts simultaneously
+- Usage:
+  ```bash
+  python update_layout.py fix|check path/to/post1.md [path/to/post2.md ...]
+  ```
+
+#### Pre-commit Hook
+
+We've implemented a custom pre-commit hook that automatically runs the `update_layout.py` update check on any `.md` files in the `_posts` directory that are being committed. The hook will:
+
+- Run automatically before each commit
+- Check all modified `.md` files in the `_posts` directory
+- Apply the necessary layout field if missing
+- Fail the commit initially but fix the issue, allowing you to commit again
+
+For manual layout checks and updates, you can always run the `update_layout.py` tool directly.
 
 ---
 

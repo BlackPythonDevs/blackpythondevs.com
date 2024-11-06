@@ -1,9 +1,13 @@
 ---
-title: "Black Python Devs Leadership Summit"
-date: 2024-10-19
 author: Abigail Afi Gbadago
-lang: en
+date: 2024-10-19
+description: Join Abigail Afi Gbadago and other leaders at the highly successful Black
+  Python Devs Leadership Summit as they shared insights on succession planning, mental
+  health, and leadership skills in a day of engaging talks and interactive sessions.
 featured_image: /assets/images/bpd-leadership-summit-1.jpeg
+lang: en
+layout: post
+title: Black Python Devs Leadership Summit
 ---
 
 The Black Python Devs Leadership Summit, which took place on September 21st at 8 a.m. was a successful event.
