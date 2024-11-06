@@ -37,6 +37,6 @@ repos:
       - id: check-for-layout
         name: check-for-layout
         files: _posts/.*.md
-        entry: python update_layout.py check
+        entry: python update_layout.py
         language: python
         additional_dependencies: [typer, python-frontmatter, typing-extensions]
