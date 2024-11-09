@@ -1,9 +1,13 @@
 ---
-title: "O'Reilly Media Partners with Black Python Devs"
-date: 2024-09-09
 author: Jay Miller
-lang: en
+date: 2024-09-09
+description: Get the inside scoop on O'Reilly Media's innovative partnership with
+  Black Python Devs and discover how it's revolutionizing access to high-quality learning
+  resources for the Black Python community.
 featured_image: /assets/images/bpd_x_oreilly.jpg
+lang: en
+layout: post
+title: O'Reilly Media Partners with Black Python Devs
 ---
 
 We are excited to announce a new partnership with O'Reilly Media!

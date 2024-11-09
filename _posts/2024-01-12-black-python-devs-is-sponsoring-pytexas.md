@@ -1,9 +1,12 @@
 ---
-title: "Black Python Devs is Sponsoring PyTexas"
-date: 2024-01-12
 author: Jay Miller
+date: 2024-01-12
+description: Discover how Black Python Devs is supporting PyTexas, a premier regional
+  Python conference in Austin, TX, and learn about opportunities to attend for free
+  through ticket giveaways and speaker selection.
 lang: en
 layout: post
+title: Black Python Devs is Sponsoring PyTexas
 ---
 
 We've got some fantastic updates to share about our upcoming involvement with PyTexas! We're thrilled to announce that we are a community sponsor for PyTexas!
