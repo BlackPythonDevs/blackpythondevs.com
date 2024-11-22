@@ -14,7 +14,7 @@ def page_url(xprocess, url_port):
     url, port = url_port
 
     class Starter(ProcessStarter):
-        timeout = 20
+        timeout = 60
         # Start the process
         args = [
             "bundle",
@@ -114,6 +114,25 @@ def test_carousel_displayed(page_url: tuple[Page, str]) -> None:
     prev_button = page.locator(".carousel-control-prev")
     expect(next_button).to_be_visible()
     expect(prev_button).to_be_visible()
+
+
+def test_first_slide_matches_latest_post(page_url: tuple[Page, str]) -> None:
+    page, live_server_url = page_url
+    page.goto(live_server_url)
+
+    # Select the first active slide in the carousel
+    active_slide = page.locator(".carousel-inner .carousel-item.active")
+    active_slide_title = active_slide.locator(".post-title")
+
+    first_post = page.locator(".post-list div").nth(0)
+    first_post_title = first_post.locator("h3 a")
+
+    expect(active_slide_title).to_be_visible()
+    expect(first_post_title).to_be_visible()
+
+    assert (
+        active_slide_title.inner_text().strip() == first_post_title.inner_text().strip()
+    ), "Titles do not match"
 
 
 @pytest.mark.parametrize(
