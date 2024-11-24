@@ -613,3 +613,38 @@ button.next:focus {
 .next {
   right: 10px;
 }
+
+.latest-posts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust spacing between items */
+}
+
+.post-item {
+  flex: 1 1 calc(33.333% - 20px); /* 3 columns with some space */
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ddd; /* Optional: Add borders for visual clarity */
+  border-radius: 8px; /* Optional: Rounded corners */
+  background-color: #f9f9f9; /* Optional: Background color */
+}
+
+.post-item h3 {
+  margin-top: 0;
+}
+
+.post-item p {
+  margin: 10px 0 0; /* Spacing between elements */
+}
+
+@media (max-width: 800px) {
+  .post-item {
+    flex: 1 1 calc(50% - 20px); /* 2 columns for medium screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .post-item {
+    flex: 1 1 100%; /* 1 column for small screens */
+  }
+}

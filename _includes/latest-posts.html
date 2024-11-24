@@ -2,17 +2,16 @@
 <h2 class="post-list-heading">{{ page.list_title }}</h2>
 {%- endif -%}
 <article class="post-list">
-  {%- assign date_format = site.bpdevs.date_format | default: "%b %-d, %Y" -%} {% assign count = 0 %} {% assign limit_posts = 3 %} {%- for post in posts -%} {%- if count < limit_posts -%}
-  <div>
-    <h3>
-      <a class="" href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a>
-    </h3>
-    <p>{{ post.date | date: date_format }}</p>
-    {%- if site.show_excerpts -%}
-    <p class="post-description" style="margin-bottom: 2rem">{{ post.description}}</p>
-    {%- endif -%}
+  {%- assign date_format = site.bpdevs.date_format | default: "%b %-d, %Y" -%}
+  <div class="latest-posts-grid">
+    {% assign count = 0 %} {% assign limit_posts = 3 %} {%- for post in posts -%} {%- if count < limit_posts -%}
+    <div class="post-item">
+      <h3>
+        <a class="" href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a>
+      </h3>
+    </div>
+    {%- assign count = count | plus: 1 -%} {%- endif -%} {%- endfor -%}
   </div>
-  {%- assign count = count | plus:1 -%} {%- endif -%} {%- endfor -%}
 </article>
 
 {% if site.paginate %}
