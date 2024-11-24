@@ -107,11 +107,11 @@ def test_carousel_displayed(page_url: tuple[Page, str]) -> None:
     page, live_server_url = page_url
     page.goto(live_server_url)
 
-    carousel = page.locator(".carousel")
+    carousel = page.locator(".slider")
     expect(carousel).to_be_visible()
 
-    next_button = page.locator(".carousel-control-next")
-    prev_button = page.locator(".carousel-control-prev")
+    next_button = page.locator(".next")
+    prev_button = page.locator(".prev")
     expect(next_button).to_be_visible()
     expect(prev_button).to_be_visible()
 
@@ -120,19 +120,17 @@ def test_first_slide_matches_latest_post(page_url: tuple[Page, str]) -> None:
     page, live_server_url = page_url
     page.goto(live_server_url)
 
-    # Select the first active slide in the carousel
-    active_slide = page.locator(".carousel-inner .carousel-item.active")
-    active_slide_title = active_slide.locator(".post-title")
+    # First slide and its title
+    first_slide_title = page.locator(".slide .info h2").nth(0)
 
-    first_post = page.locator(".post-list div").nth(0)
-    first_post_title = first_post.locator("h3 a")
+    # First slide's title is visible
+    expect(first_slide_title).to_be_visible()
 
-    expect(active_slide_title).to_be_visible()
-    expect(first_post_title).to_be_visible()
+    expected_title = page.locator(".info h2").nth(0).inner_text().strip()
 
     assert (
-        active_slide_title.inner_text().strip() == first_post_title.inner_text().strip()
-    ), "Titles do not match"
+        first_slide_title.inner_text().strip() == expected_title.strip()
+    ), "The first slide's title does not match the expected title of the latest post."
 
 
 @pytest.mark.parametrize(

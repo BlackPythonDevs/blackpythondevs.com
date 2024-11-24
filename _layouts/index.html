@@ -3,32 +3,24 @@ layout: default
 ---
 <div class="home">
   {% assign t = site.data.locales[page.lang][page.lang] %} {% if page.title %} {% assign header = page.title %} {% else %} {% assign header = site.title %} {% endif %}
-  <header>
-    <div id="postSlider" class="carousel slide slider-container" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        {% assign recent_posts = site.posts | slice: 0, 3 %}
+  <div class="slider">
+    <div class="slides">
+      {% assign recent_posts = site.posts | slice: 0, 3 %}
         {% for post in recent_posts %}
-        <div class="carousel-item {% if forloop.first %}active{% endif %}">
-          <div class="image-circle">
-            <img src="{{ post.featured_image | default: '/assets/images/bpd_stacked.png' }}" alt="{{ post.title }}">
-          </div>
-          <h3 class="post-title">{{ post.title }}</h3>
-          <p class="post-summary">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+      <div class="slide {% if forloop.first %}active{% endif %}">
+       <div class="image-wrapper">
+        <img src="{{ post.featured_image | default: '/assets/images/bpd_stacked.png' }}" alt="{{ post.title }}">
+       </div>
+        <div class="info">
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
         </div>
-        {% endfor %}
       </div>
-
-      <!-- Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#postSlider" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#postSlider" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      {% endfor %}
     </div>
-  </header>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
   {{ content }}
 
   <img src="{{'/assets/images/dcus.jpg' | relative_url }}"  alt="DjangoCon US 2023"/>
