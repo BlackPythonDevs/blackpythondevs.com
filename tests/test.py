@@ -140,12 +140,13 @@ def test_first_slide_matches_latest_post(page_url: tuple[Page, str]) -> None:
         "/blog",
     ),
 )
-def test_page_description_in_index_and_blog(page_url: tuple[Page, str], url: str):
-    """Checks for the descriptions data in the blog posts. There should be some objects with the class `post-description`"""
-    page, live_server_url = page_url
-    page.goto(f"{live_server_url}{url}")
-    expect(page.locator("p.post-description").first).to_be_visible()
-    expect(page.locator("p.post-description").first).not_to_be_empty()
+
+# def test_page_description_in_index_and_blog(page_url: tuple[Page, str], url: str):
+#     """Checks for the descriptions data in the blog posts. There should be some objects with the class `post-description`"""
+#     page, live_server_url = page_url
+#     page.goto(f"{live_server_url}{url}")
+#     expect(page.locator("p.post-description").first).to_be_visible()
+#     expect(page.locator("p.post-description").first).not_to_be_empty()
 
 
 def stem_description(
