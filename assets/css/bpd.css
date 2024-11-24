@@ -617,16 +617,16 @@ button.next:focus {
 .latest-posts-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Adjust spacing between items */
+  gap: 20px;
 }
 
 .post-item {
-  flex: 1 1 calc(33.333% - 20px); /* 3 columns with some space */
+  flex: 1 1 calc(33.333% - 20px);
   box-sizing: border-box;
   padding: 10px;
-  border: 1px solid #ddd; /* Optional: Add borders for visual clarity */
-  border-radius: 8px; /* Optional: Rounded corners */
-  background-color: #f9f9f9; /* Optional: Background color */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
 .post-item h3 {
@@ -634,17 +634,17 @@ button.next:focus {
 }
 
 .post-item p {
-  margin: 10px 0 0; /* Spacing between elements */
+  margin: 10px 0 0;
 }
 
 @media (max-width: 800px) {
   .post-item {
-    flex: 1 1 calc(50% - 20px); /* 2 columns for medium screens */
+    flex: 1 1 calc(50% - 20px);
   }
 }
 
 @media (max-width: 500px) {
   .post-item {
-    flex: 1 1 100%; /* 1 column for small screens */
+    flex: 1 1 100%;
   }
 }
