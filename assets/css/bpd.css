@@ -563,12 +563,12 @@ ul.speaking-list {
   background-color: #fff;
 }
 
-
 .info h2 {
   margin: 10px 0;
   font-size: 1.5em;
   color: #333;
 }
+
 .info p {
   margin: 0;
   font-size: 1em;
@@ -613,6 +613,7 @@ button.next:focus {
 .next {
   right: 10px;
 }
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
