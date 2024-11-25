@@ -613,38 +613,16 @@ button.next:focus {
 .next {
   right: 10px;
 }
-
-.latest-posts-grid {
-  display: flex;
-  flex-wrap: wrap;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  margin-top: 20px;
 }
 
-.post-item {
-  flex: 1 1 calc(33.333% - 20px);
-  box-sizing: border-box;
-  padding: 10px;
+.grid-item {
+  padding: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;
-}
-
-.post-item h3 {
-  margin-top: 0;
-}
-
-.post-item p {
-  margin: 10px 0 0;
-}
-
-@media (max-width: 800px) {
-  .post-item {
-    flex: 1 1 calc(50% - 20px);
-  }
-}
-
-@media (max-width: 500px) {
-  .post-item {
-    flex: 1 1 100%;
-  }
 }
