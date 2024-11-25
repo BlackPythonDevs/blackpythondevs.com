@@ -25,8 +25,19 @@ layout: default
 
   <img src="{{'/assets/images/dcus.jpg' | relative_url }}"  alt="DjangoCon US 2023"/>
 
-  {%- include latest-posts.html -%}
-  {%- include join_us.html -%}
+ <section class="isolated-grid">
+  <div class="grid-container">
+    <div class="grid-item">
+      {% include latest-posts.html %}
+    </div>
+    <div class="grid-item">
+      {% include join-us-on-social-media.html %}
+    </div>
+  </div>
+ </section>
+
+ {% include join_us.html %}
+
   {%- include partnerships.html -%}
   {%- include newsletter_form.html newsletter_title="Learn what the community and its members are doing from our newsletter!" -%}
 </div>
