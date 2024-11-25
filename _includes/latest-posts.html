@@ -3,9 +3,9 @@
 {%- endif -%}
 <article class="post-list">
   {%- assign date_format = site.bpdevs.date_format | default: "%b %-d, %Y" -%}
-  <div class="latest-posts-grid">
+  <div>
     {% assign count = 0 %} {% assign limit_posts = 3 %} {%- for post in posts -%} {%- if count < limit_posts -%}
-    <div class="post-item">
+    <div>
       <h3>
         <a class="" href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a>
       </h3>
