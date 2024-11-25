@@ -563,12 +563,12 @@ ul.speaking-list {
   background-color: #fff;
 }
 
+
 .info h2 {
   margin: 10px 0;
   font-size: 1.5em;
   color: #333;
 }
-
 .info p {
   margin: 0;
   font-size: 1em;
@@ -625,4 +625,38 @@ button.next:focus {
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;
+
+.latest-posts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.post-item {
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.post-item h3 {
+  margin-top: 0;
+}
+
+.post-item p {
+  margin: 10px 0 0;
+}
+
+@media (max-width: 800px) {
+  .post-item {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 500px) {
+  .post-item {
+    flex: 1 1 100%;
+  }
 }
