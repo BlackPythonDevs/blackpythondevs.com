@@ -9,10 +9,7 @@
       <h3>
         <a class="" href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a>
       </h3>
-      <p>{{ post.date | date: date_format }}</p>
-      {%- if site.show_excerpts -%}
-      <p class="post-description">{{ post.description }}</p>
-      {%- endif -%}
+      <p>{{ post.author }}</p>
     </div>
     {%- assign count = count | plus: 1 -%} {%- endif -%} {%- endfor -%}
   </div>
