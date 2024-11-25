@@ -18,9 +18,7 @@
     {% endif %}
     {% if conference.speaking %}
       <h3>Speaking:</h3>
-      <li>
       {{ conference.speaking | markdownify }}
-      </li>
     {% endif %}
   </article>
   {% endfor %}

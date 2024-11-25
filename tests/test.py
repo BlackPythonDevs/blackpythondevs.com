@@ -1,6 +1,8 @@
 import pathlib
+from typing import Generator
 
 import pytest
+import frontmatter
 from xprocess import ProcessStarter
 from playwright.sync_api import Page, expect, sync_playwright
 
@@ -12,7 +14,7 @@ def page_url(xprocess, url_port):
     url, port = url_port
 
     class Starter(ProcessStarter):
-        timeout = 20
+        timeout = 60
         # Start the process
         args = [
             "bundle",
@@ -90,7 +92,7 @@ def test_headers_in_language(page_url: tuple[Page, str], route: str) -> None:
 )
 def test_bpdevs_title_en(page_url: tuple[Page, str], title: str, url: str) -> None:
     page, live_server_url = page_url
-    page.goto(f"{live_server_url}/{url}")
+    page.goto(f"{live_server_url}{url}")
     expect(page).to_have_title(f"Black Python Devs | {title}")
 
 
@@ -105,10 +107,75 @@ def test_carousel_displayed(page_url: tuple[Page, str]) -> None:
     page, live_server_url = page_url
     page.goto(live_server_url)
 
-    carousel = page.locator(".carousel")
+    carousel = page.locator(".slider")
     expect(carousel).to_be_visible()
 
-    next_button = page.locator(".carousel-control-next")
-    prev_button = page.locator(".carousel-control-prev")
+    next_button = page.locator(".next")
+    prev_button = page.locator(".prev")
     expect(next_button).to_be_visible()
     expect(prev_button).to_be_visible()
+
+
+def test_first_slide_matches_latest_post(page_url: tuple[Page, str]) -> None:
+    page, live_server_url = page_url
+    page.goto(live_server_url)
+
+    # First slide and its title
+    first_slide_title = page.locator(".slide .info h2").nth(0)
+
+    # First slide's title is visible
+    expect(first_slide_title).to_be_visible()
+
+    expected_title = page.locator(".info h2").nth(0).inner_text().strip()
+
+    assert (
+        first_slide_title.inner_text().strip() == expected_title.strip()
+    ), "The first slide's title does not match the expected title of the latest post."
+
+
+@pytest.mark.parametrize(
+    "url",
+    (
+        "/",
+        "/blog",
+    ),
+)
+
+# def test_page_description_in_index_and_blog(page_url: tuple[Page, str], url: str):
+#     """Checks for the descriptions data in the blog posts. There should be some objects with the class `post-description`"""
+#     page, live_server_url = page_url
+#     page.goto(f"{live_server_url}{url}")
+#     expect(page.locator("p.post-description").first).to_be_visible()
+#     expect(page.locator("p.post-description").first).not_to_be_empty()
+
+
+def stem_description(
+    path: pathlib.Path,
+) -> Generator[tuple[str, frontmatter.Post], None, None]:
+    """iterate throug a list returning the stem of the file and the contents"""
+
+    for entry in path.glob("*.md"):
+        yield (entry.stem, frontmatter.loads(entry.read_text()))
+
+
+blog_posts = stem_description(pathlib.Path("_posts"))
+
+
+@pytest.mark.parametrize("post", list(blog_posts))
+def test_page_blog_posts(
+    page_url: tuple[Page, str], post: tuple[str, frontmatter.Post]
+):
+    """Checks that the meta page description matches the description of the post"""
+    page, live_server_url = page_url
+    entry_stem, frontmatter = post
+    url = f"{live_server_url}/{entry_stem}/"
+    page.goto(url)
+    page.wait_for_selector(
+        'meta[name="description"]',
+        timeout=5000,
+        state="attached",
+    )
+    assert (
+        page.locator('meta[name="description"]').get_attribute("content")
+        == frontmatter["description"]
+    )

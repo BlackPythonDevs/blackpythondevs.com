@@ -1,8 +1,11 @@
 ---
-layout: post
-lang: en
-title: "Marlene Mhangami Recognized as Python Fellow for Q3 2023"
 date: 2024-01-25
+description: Meet Marlene Mhangami, a trailblazing leader in the Python community
+  recognized for her exceptional contributions as PSF Chair and DEI Working Group
+  member, now highlighted as a Q3 2023 Python Fellow.
+lang: en
+layout: post
+title: Marlene Mhangami Recognized as Python Fellow for Q3 2023
 ---
 
 Every quarter, the Python Software Foundation recognizes individuals in the community for their exceptional contributions to the Python community. Black Python Devs member [Marlene Mangami](http://marlenemhangami.com/) was selected as a fellow for [Q3 2023](https://pyfound.blogspot.com/2024/01/announcing-python-software-foundation.html).

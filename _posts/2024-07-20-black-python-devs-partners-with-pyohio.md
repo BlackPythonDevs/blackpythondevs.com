@@ -1,10 +1,13 @@
 ---
-title: "Black Python Devs Partners with PyOhio to Foster Community Growth"
+author: Anotida Expected Msiiwa
 date: 2024-07-20
-author: "Anotida Expected Msiiwa"
-lang: "en"
-layout: "post"
-featured_image: "/assets/images/black-python-devs-x-pyohio.png"
+description: Discover how Black Python Devs is teaming up with PyOhio to create a
+  more inclusive and diverse community, supporting and amplifying the voices of Black
+  developers in Ohio and beyond.
+featured_image: /assets/images/black-python-devs-x-pyohio.png
+lang: en
+layout: post
+title: Black Python Devs Partners with PyOhio to Foster Community Growth
 ---
 
 We are thrilled to announce a significant new partnership between Black Python Devs and [PyOhio](https://www.pyohio.org/2024/)! This collaboration marks a major milestone in our mission to amplify the involvement of Black developers within the Python community, with a particular focus on the Ohio region. Our financial support for PyOhio is designed to stimulate community engagement and foster growth in the years to come.
