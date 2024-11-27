@@ -61,6 +61,7 @@ input::-moz-focus-inner {
 
 article.post-list a {
   color: #007b95;
+  font-size: 19px;
 }
 
 article li {
@@ -568,7 +569,6 @@ ul.speaking-list {
   font-size: 1.5em;
   color: #333;
 }
-
 .info p {
   margin: 0;
   font-size: 1em;
@@ -612,6 +612,19 @@ button.next:focus {
 
 .next {
   right: 10px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.grid-item {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
 .grid-container {
