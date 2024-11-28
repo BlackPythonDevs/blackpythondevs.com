@@ -63,11 +63,6 @@ Executor</p>
 <p><strong>Velda Kiara</strong><br/>
 Vice Executor</p>
 </article>
-<article class="leadership-photo-container">
-<img class="leadership-photo" alt="photo of Oleksis" src="https://github.com/oleksis.png">
-<p><strong>Oleksis Fraga</strong><br/>
-Technical Manager</p>
-</article>
 
 <article class="leadership-photo-container">
 <img class="leadership-photo" alt="photo of Doreen" src="/assets/images/doreen.png">

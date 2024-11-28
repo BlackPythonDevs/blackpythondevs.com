@@ -1,117 +1,100 @@
-import os
-import re
-from datetime import datetime, time
-from pathlib import Path
+import datetime
+import json
+import pathlib
+from typing import Iterator
 from urllib.parse import urlparse
 
-import yaml
-from github import Auth, Github
-from github.Issue import Issue
-from github.PaginatedList import PaginatedList
+import gh_issues
 
-ROOT = Path(__file__).parent.parent
-conferences_path = ROOT / "_data/conferences.yml"
+QUERY = "repo:blackpythondevs/blackpythondevs.github.io type:issue label:conference"
 
 
-def create_github_client():
-    gh_token = os.getenv("GITHUB_TOKEN", "")
-    auth = Auth.Token(gh_token)
-    client = Github(auth=auth)
-    return client
-
-
-def get_open_issues(gh: Github) -> PaginatedList[Issue]:
-    repo = gh.get_repo("BlackPythonDevs/blackpythondevs.github.io")
-    issues = repo.get_issues(state="open", labels=["conference"])
+def get_conference_issues(
+    query: str = QUERY,
+) -> Iterator[gh_issues.Issue]:  # pragma no cover
+    issues = gh_issues.issues_by_query(query)
     return issues
 
 
-def parse_conference_details(issue_body: str) -> dict | None:
-    # Extract fields from issue body
-    name_match = re.search(
-        r"Conference Name(?:\r\n|\n){2}(.*?)(?:\r\n|\n){2}", issue_body
-    )
-    url_match = re.search(r"URL(?:\r\n|\n){2}(.*?)(?:\r\n|\n){2}", issue_body)
-    dates_match = re.search(
-        r"Conference Dates(?:\r\n|\n){2}(.*?)(?:\r\n|\n){2}", issue_body
-    )
-    type_match = re.search(
-        r"Conference Type(?:\r\n|\n){2}(.*?)(?:\r\n|\n){2}", issue_body
-    )
-    location_match = re.search(
-        r"Conference Location(?:\r\n|\n){2}(.*?)(?:\r\n|\n){2}", issue_body
-    )
-    summary_match = re.search(
-        r"Summary(?:\r\n|\n){2}(.*?)(?:\r\n|\n){2}",
-        issue_body,
-        re.DOTALL,
-    )
-    speaking_match = re.search(
-        r"Speaking(?:\r\n|\n){2}(.*?)(?:\r\n|\n){2}### Code of Conduct(?:\r\n|\n){2}",
-        issue_body,
-        re.DOTALL,
-    )
+def normalize_url(url_match: str | None) -> str | None:
+    """
+    Parse the url and see if a scheme (`https`) is included in it.
+    If not, then prepend `https` to the url from the issue body
 
-    # Set a default value of None for when the url field isn't as expected
-    valid_url = normalize_url() if not url_match else normalize_url(url_match[1])
-
-    if dates_match:
-        conferenceDates = dates_match[1]
-        # Parse the end date of the conference
-        endDateStr = conferenceDates.split("-")[1].strip()
-        endDate = datetime.strptime(endDateStr, "%d %b %Y")
-        # Check if the conference end date is greater than today
-        today = datetime.combine(datetime.now(), time())
-
-        if endDate >= today:
-            conference = {
-                "name": name_match[1],
-                "url": valid_url,
-                "dates": dates_match[1],
-                "type": type_match[1],
-                "location": location_match[1],
-                "summary": summary_match[1],
-                "speaking": speaking_match[1] if speaking_match else "",
-            }
-            return conference
-    return None
-
-
-def normalize_url(url_match: str = None):
-    valid_url = None
-    # Ensure the url field is not blank and the url matches the regex
-    if url_match is not None and url_match.strip() != "":
-        # Parse the url and see if a scheme (`https`) is included in it
-        # If not, then prepend `https` to the url from the issue body
-        # This guards against the website thinking the passed in url is another page on https://blackpythondevs.com/
+    This guards against the website thinking the passed in url is another page on https://blackpythondevs.com/
+    """
+    if url_match:
         parsed_url = urlparse(url_match)
-        if "http" not in parsed_url.scheme.casefold():
-            valid_url = f"https://{url_match}"
+        url_scheme = parsed_url.scheme
+
+        # If "https" is already the scheme, then we're good and don't need to do anything else
+        if url_scheme == "https":
+            return url_match
+
+        # If the scheme is not "https", then we need to prepend "https" to the url
+        if url_scheme.strip() == "":
+            return f"https://{url_match}"
         else:
-            valid_url = url_match
-    return valid_url
+            # If the scheme is a valid protocol (ftp, http, etc.),
+            # but not "https", then we need to replace it with "https"
+            return url_match.replace(parsed_url.scheme, "https")
 
 
 def write_conferences_to_file(confs: list[dict]):
     # Write the conferences to the _data/conferences.yml file
-    with conferences_path.open("w") as f:
-        yaml.dump(confs, f)
+    conferences_path.write_text(json.dumps(confs))
 
 
-if __name__ == "__main__":
-    conferences = []
+def __to_conference_date(conference_date: str) -> datetime.date:
+    return datetime.date.fromisoformat(conference_date)
 
-    # Create Github client object
-    gh_client = create_github_client()
 
-    # Get open issues from repo
-    open_issues: PaginatedList[Issue] = get_open_issues(gh_client)
+def parse_conference(issue: gh_issues.Issue) -> dict[str, str | None]:
+    """convert an issue to a dictionary of parsed data"""
 
-    # Parse each conference issue so long as it has the "conference" label
-    for issue in open_issues:
-        if "conference" in [label.name for label in issue.labels]:
-            parsed_conf = parse_conference_details(issue_body=issue.body)
-            if parsed_conf:
-                conferences.append(parsed_conf)
+    KEYS = [
+        "conference_name",
+        "url",
+        "conference_start_date",
+        "conference_end_date",
+        "conference_type",
+        "conference_location",
+        "summary",
+        "speaking",
+    ]
 
-    write_conferences_to_file(conferences)
+    _issue = {k: getattr(issue, k, None) for k in KEYS}
+    _issue["url"] = normalize_url(_issue.get("url", None))
+    return _issue
+
+
+def _validate_issue(issue: gh_issues.Issue, date_to_check: str) -> bool:
+    """Validate an issue based on its `date_to_check`"""
+    if not (valid_date := getattr(issue, date_to_check, False)):
+        return False
+    else:
+        return __to_conference_date(valid_date) >= datetime.date.today()
+
+
+def build_conferences() -> list[dict[str, str | None]]:  # pragma: no cover
+    return [
+        parse_conference(issue)
+        for issue in get_conference_issues()
+        if _validate_issue(issue, "conference_end_date")
+    ]
+
+
+if __name__ == "__main__":  # pragma: no cover
+    ROOT = pathlib.Path(__file__).parent.parent
+    conferences_path = ROOT.joinpath("_data/conferences.json")
+    conferences = build_conferences()
+    j_conferences = json.dumps(
+        list(
+            sorted(
+                conferences,
+                key=lambda x: __to_conference_date(x["conference_start_date"]),
+            )
+        ),
+        indent=2,
+    )
+    conferences_path.write_text(f"{j_conferences}\n")

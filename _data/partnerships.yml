@@ -1,8 +1,9 @@
 - name: "TalkPython Training"
   promo_code: "bpd-20pc-1c1da"
-  description: "When you use the promo code: <strong>bpd-20pc-1c1da</strong> at checkout, you will receive 10% off your course purchase. TalkPython Training will also donate 20% of the purchase to Black Python Devs."
-  url: "/2024-08-16-talkpython-training-partnership"
+  description: 'When you use the <a href="https://training.talkpython.fm/black-python-devs">Black Python Devs landing page</a> or use the promo code: <strong>bpd-20pc-1c1da</strong> at checkout, you will receive 10% off your course purchase. TalkPython Training will also donate 20% of the purchase to Black Python Devs.'
+  url: "https://training.talkpython.fm/black-python-devs"
   logo: "/assets/images/talkpython.webp"
+
 - name: "O'Reilly Media"
   promo_code: "https://oreillymedia.pxf.io/c/5713155/2126973/15173"
   description: '<a href="https://oreillymedia.pxf.io/c/5713155/2126973/15173">Sign up with our promo code</a> to receive a 30-day trial of O''Reilly''s Learning Platform. If you sign up beyond the trial a percentage of your subscription will go to Black Python Devs.'

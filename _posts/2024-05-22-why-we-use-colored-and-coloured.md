@@ -1,9 +1,12 @@
 ---
-layout: post
-lang: en
-title: Why We Use Black, Colored and Coloured when Describing Members
 date: 2024-05-22
+description: Join us as we explore a nuanced approach to inclusive language, examining
+  the complexities of terms like "Black", "Colored", and "coloured" in describing
+  our community members.
 featured_image: /assets/images/BPD_PyCon_2024_cropped.jpg
+lang: en
+layout: post
+title: Why We Use Black, Colored and Coloured when Describing Members
 ---
 
 We've received concerns from (up to this point) entirely white folks on the internet about our usage of words like _Colored_ and _Coloured_ when regarding some of our members.

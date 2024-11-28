@@ -1,125 +1,168 @@
----
-layout: default
-lang: en
-title: Contributing
----
+# Contributing to Black Python Devs Projects
 
-# Contributing at Black Python Devs
+Follow these steps and note these guidelines to begin contributing:
 
-First off, thank you for considering contributing to Black Python Devs website. It's people like you that make Black Python Devs such a great community. Navigate through the following to understand more about contributing here.
+1. First step is to set up the local development environment.
+1. Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/BlackPythonDevs/blackpythondevs.github.io/issues).
+1. A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/BlackPythonDevs/blackpythondevs.github.io/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
 
-- [Before You Get Started](#before-you-get-started)
-- [How to Contribute](#how-to-contribute)
-- [Accessibility](#accessibility)
-- [Translations](#translations)
+# Diagram of the infrastructure in use
 
-# Before You Get Started
+Below are some diagrams to best explain the file structure of the website, the development structure and how some information are been generated
 
-## Code of Conduct
+## Website structure
 
-Black Python Devs follows the following [Code of Conduct](https://github.com/BlackPythonDevs/.github/blob/main/CODE_OF_CONDUCT.md) . The comfort and safety of Black Python Devs community members are our priority. Please do well to adhere to the Code of Conduct to participate in the Black Python Devs community.
+The diagram below illustrates the main navigation structure of BPD website, showing how the homepage `(Index)` connects to various sections, including the `Home`, `Blog`, `About Us`, `Events`, and `Community`. Each blog article, represented as `Article1` and `Article2`, is linked directly from the `Blog` section.
 
-## Issues & Pull Requests
+```mermaid
+flowchart TD
+    Index --> Home
+    Index --> Blog
+    Blog --> Article1
+    Blog --> Article2
+    Index --> AboutUs
+    Index --> Events
+    Index --> Community
+```
 
-### Creating an issue
+## Development structure
 
-Before **creating** an issue i.e for `features`/`bugs`/`improvements` please follow these steps:
+The diagram below outlines the file structure of the development environment. The root node represents the main directory, containing essential files and folders like `_config.yml`, `_posts`, `_layouts`, `_includes`, `_data`, `_articles`, and `assets`. Each folder contains further organization of specific files. This will aid contributors in understanding how the project is organized and where different components are located.
 
-1. Search existing issues before creating a new issue (look to see if the issue has already been created).
-1. If it doesn't exist create a new issue giving as much context as possible (please take note and select the correct issue type, for example `bug`, `documentation` or `feature`.
-1. If you wish to work on the issue add this to the issue description.
+```mermaid
+    flowchart TD
+    root --> _config.yml
+    root --> _posts/
+    root --> _layouts/
+    root --> _includes/
+    root --> _data/
+    root --> _articles/
+    root --> assets/
+    root --> about.md
+    root --> index.html
+    root --> tests/
+    _posts/ --> post1
+    _posts/ --> post2
+    assets/ --> css/
+    assets/ --> images/
+    assets/ --> js/
+```
 
-### Working on an issue
+## How some information are generated
 
-Before working on an existing issue please follow these steps:
+The diagram below explains how information is generated for the about page, showing how the `about.md`(source content) connects with other contents, templates and configuration files. The `about.md` file links to `_layouts/default.html` and `_includes/header.html` and `footer.html`, which define the page layout and thus generates a `about.html` this html file can be styled and scripted with files in the `assets/` folder. This diagram clarifies the rendering process and how different files work together to create the final output for the about page.
 
-1. Comment asking for the issue to be assigned to you.
-1. To best position yourself for issues assignment, we recommend that you:
-   1. Confirm that you have read the CONTRIBUTING.md.
-   1. Have a functional development environment (have built and are able to run the project).
-   1. Convey your intended approach to solving the issue.
-   1. Put each of these items in writing in one or more comments.
-1. After the issue is assigned to you, you can start working on it.
-1. In general, **only** start working on this issue (and open a Pull Request) when it has been assigned to you. Doing so will prevent confusion, duplicate work (some of which may go unaccepted given its duplicity), incidental stepping on toes, and the headache involved for maintainers and contributors alike as issue assignments collide and heads bump together.
-1. Reference the issue in your Pull Request (for example `This PR fixes #123`), so that the corresponding issue is automatically closed upon merge of your Pull Request.
+```mermaid
+    flowchart TD
+    about.md --> _layouts/default.html
+    about.md --> _config.yml
+    _layouts/default.html --> _includes/header.html
+    _layouts/default.html --> _includes/footer.html
+    _layouts/default.html --> about.html
+    _config.yml --> about.html
+    about.html --> assets/css/style.css
+    about.html --> assets/js/script.js
+```
 
-> Notes:
->
-> - Check the `Assignees` box at the top of the page to see if the issue has been assigned to someone else before requesting this be assigned to you. If the issue has a current Assignee, but appears to be inactive, politely inquire with the current Assignee as to whether they are still working on a solution and/or if you might collaborate with them.
-> - Only request to be assigned an issue if you know how to work on it.
-> - If an issue is unclear, ask questions to get more clarity before asking to have the issue assigned to you; avoid asking "what do I do next? how do I fix this?" (see the item above this line)
-> - An issue can be assigned to multiple people, if you all agree to collaborate on the issue (the Pull Request can contain commits from different collaborators)
-> - Any issues that has no activity after 2 weeks will be unassigned and re-assigned to someone else.
+# How to Contribute
 
-## Reviewing Pull Requests
+## Fork the repository
 
-We welcome everyone to review Pull Requests. It is a great way to learn, network, and support each other.
+- To fork the repository so you have a copy of the codebase, you will click on the **"Fork"** button from the repository main page
 
-### DOs
+  ![Fork button](/assets/images/fork_button_page.png)
 
-- Use inline comments to explain your suggestions
-- Use inline suggestions to propose changes
-- Exercise patience and empathy while offering critiques of the works of others.
+- Clicking on the Fork button takes you to the **"Create New Fork"** page where you select the owner (your personal github account) and click on the Create fork button.
 
-### DON'Ts
+  ![Create new fork page](/assets/images/create_new_fork_page.png)
 
-- Do not repeat feedback, this creates more noise than value (check the existing conversation), use GitHub reactions if you agree/disagree with a comment
-- Do not blindly approve Pull Requests to improve your GitHub contributors graph
+## Creating an issue
 
-## Discord Community
+- Click on the issues tab in the repository.
 
-Join the [Discord](https://discord.gg/XUc3tFqCT3) to discuss suggested new features, possible bugs, enhancement in user experience, and any other aspects of the site. The comment section of each issue is our preferred method of communication as it retains conversations history for future contributors wanting to gain insights/updates on the topic in question, you can, however, inquire in the #community-discussion channel in the Black Python Devs Discord workspace.
+  ![issues tab](/assets/images/issues_tab.png)
 
-# Accessibility
+- Click on the green button with the label **"New issue"** and you should see the image below:
 
-Accessibility (A11y) using the **FastPass** tests for A11y and the [Accessibility Insights for Web
-][1] browser extension.
+  ![New issue button](/assets/images/new_issue.png)
 
-## 1: Reproduce the Tests
+- Type in the issue title in the title textbox and type in a clear explanation of the issue in the textarea. You can add images, code snippets, etc to explain your issue.
 
-First, reproduce the **FastPass** tests for A11y using the [Accessibility Insights for Web
-][1] browser extension. This extension is designed to help you identify and fix accessibility issues on your website.
+- Once you are done, you can preview your issue by selecting the Preview tab. If you are satisfied with the issue presentation, you can click on the green "Submit new issue" button to create your issue.
 
-![image](https://github.com/BlackPythonDevs/blackpythondevs.github.io/assets/44526468/222e6653-c963-4518-a297-262d656216a7)
+- And that's it! If you choose to comment requesting the issue to be assigned to you, wait for a maintainer to do so. You should get an email notification of the issue being assigned to you or you can view the issue assignment in the issue page. It should look similar to this:
 
-## 2: Capture the issues
+  ![issue assignment](/assets/images/issue_assignment.png)
 
-If the Accessibility Insights for Web extension identifies any issues, capture a screenshot of the issues on the [BPDevs](https://BlackPythonDevs.github.io/) website. You can do this by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> on your keyboard.
+## Working on an issue
 
-## 3: Make the Necessary Changes
+- Please create a separate branch for each issue you work on. Avoid working on multiple issues from the same branch, as this can complicate the review process
+- The easiest way to make changes and and test them is by using [![GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/BlackPythonDevs/blackpythondevs.github.io)
 
-Next, make the necessary changes to fix the identified issues. This might involve modifying the CSS of the website.
+- You can also access the Codespaces from the repository main page:
 
-## 4: Test the Changes
+  ![Codespaces tab](/assets/images/codespaces_tab.png)
 
-After making the changes, run the **FastPass** test again and capture a screenshot showing no accessibility issues. This will serve as proof that the issues have been successfully resolved.
+- The web version of VSCode should open in a new tab in your browser:
 
-![image](https://github.com/BlackPythonDevs/blackpythondevs.github.io/assets/44526468/9a284f43-3cde-4370-9eab-1d302ed65e9e)
+  ![Black Python Devs Codespace](/assets/images/blackpythondevs_codespace.png)
 
-## 5: Check and Pass Other Tests
+- Now that you have the code editor set up, you need to install the dependencies. To do this, you have to open the code editor's terminal and run the command `bundle install`.
 
-Finally, check and pass other tests, such as the rules with `pre-commit`. This ensures that your changes are in line with the existing codebase and do not introduce any new issues.
+- The easiest way to open the terminal is to click on the 3 horizontal lines (also known as hamburger) at the top left of the code editor > Terminal > New Terminal:
 
-# Translations
+  ![Terminal starter](/assets/images/terminal_starter3.png)
 
-We welcome translations for the Black Python Devs website in all languages! Here's how you can contribute:
+- In the terminal run the command `bundle install`.
 
-The language code being used should be in the format [<ISO 639-1>](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+  ![Bundle install terminal](/assets/images/bundle_install_terminal.png)
 
-1. [**Fork the repository**](#2-fork-the-code): Make a copy of this project on your account.
+- Afterwards, run the command `pip install -r requirements-dev.txt` to install the python dev dependencies.
 
-2. **Create a new branch**: Make a new branch for your translation work to keep it separate from the main project: e.g. `es` .
+  ![Pip install terminal](/assets/images/pip_install_terminal.png)
 
-3. **Translate**: Translate all the content in your preferred language. Please ensure that the translation is accurate and professional.
+- Install the pre-commit hooks to automatically format the code before committing. Run the command `pre-commit install`:
 
-   - Copy `_data/locales/en.yml` to your target language file e.g. `_data/locales/es.yml` and translate all the strings.
+  ![Pre-commit install terminal](/assets/images/pre-commit_install_terminal.png)
 
-   - Create a new directory in `_articles/` for your language e.g. `_articles/es/`, copy each guide from `_articles/` into that folder and translate the content in each guide.
+- After installing the dependencies, its time to run the application. We do this by running the command `bundle exec jekyll serve --detach` or run the default **Build Task** <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>:
 
-   - Copy `index.html` to your target language index file e.g. [`_articles/es/index.html`](https://github.com/BlackPythonDevs/blackpythondevs.github.io/blob/HEAD/_articles/es/index.html) and update the `lang:` and add the `permalink:` fields. Example: `lang: es` and `permalink: /es/`.
+  ![Jekyll serve terminal](/assets/images/jekyll_serve_terminal.png)
 
-4. **Submit a Pull Request**: You may send a pull request before all steps above are complete: e.g., you may want to ask for help with translations, or getting tests to pass. However, your pull request will not be merged until all steps above are complete.
+- The server address shows `http://127.0.0.1:4000`. This is the address for any local computer so this server will be wrong since the application is running on a remote computer so we have to get the address of that computer. We can get the address by clicking on the Ports tab next to the Terminal:
 
-Our maintainers will review your pull request and merge it if everything is in order. We appreciate your contribution to making Black Python Devs accessible to more people around the world!
+  ![Codespace ports](/assets/images/codespace_ports2.png)
 
-[1]: https://microsoftedge.microsoft.com/addons/detail/accessibility-insights-fo/ghbhpcookfemncgoinjblecnilppimih
+- <kbd>Ctrl</kbd> + Click on the Forwarded Address assigned to Port 4000. This will open the running application in a new tab:
+
+  ![Running page](/assets/images/running_page.png)
+
+### Testing Changes (create new tests as needed)
+
+- To run the test suites for the codebase
+
+  - Ensure the site is running locally with `bundle exec jekyll serve --detach`. This will run the server in the background, and any content changes will immediately reflect on the site.
+
+    ![Jekyll serve terminal](/assets/images/jekyll_serve_terminal.png)
+
+    - If you need to restart the server, you can run `pkill -f jekyll` to stop the server and then run `bundle exec jekyll serve --detach` to start the server again.
+
+  - Run all tests in the test-suite with the command `python3 -m pytest`:
+
+    ![Pytest terminal](/assets/images/pytest_run_terminal.png)
+
+### Pushing Changes
+
+- Run `pre-commit run --all` to ensure your code is formatted and linted correctly before pushing your changes.
+
+  ![Pre-commit run terminal](/assets/images/pre-commit_run_terminal.png)
+
+- Run `git commit -m "<Your commit message>"` to commit your changes.
+
+  ![Git commit terminal](/assets/images/git_commit_terminal.png)
+
+- Finally run `git push origin <your-branch-name>` to push your changes to your fork.
+
+  ![Git push terminal](/assets/images/git_push_terminal.png)
+
+- Once you’ve committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. Please ensure that you compare your feature branch to the desired branch of the repo you are supposed to make a PR to. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes in your development branch and update it. 🥳
