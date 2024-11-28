@@ -253,6 +253,20 @@ a.logo-text img {
   margin-left: auto;
 }
 
+.post-meta{
+  color: #000;
+  font-weight: bold;
+}
+
+.post-link{
+  color: #007b95;
+}
+
+.p-author{
+  color: #0099cc;
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 800px) {
   #menu-open {
     display: block;
@@ -480,8 +494,13 @@ img.leadership-photo {
   height: 8rem;
 }
 
+.post-title{
+  color:#007b95;
+}
+
 .post-title > h3 {
   font-size: smaller;
+  color:#007b95;
 }
 
 img.donation-photo {
