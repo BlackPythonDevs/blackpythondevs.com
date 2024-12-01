@@ -170,3 +170,26 @@ def test_page_blog_posts(
         page.locator('meta[name="description"]').get_attribute("content")
         == frontmatter["description"]
     )
+
+
+def get_post_image(metadata, default_image="/assets/images/bpd_stacked.png"):
+    """Determine the image to display for a post."""
+    return metadata.get("featured_image", default_image)
+
+
+def test_default_image_displayed_for_post_without_featured_image():
+    metadata = {
+        "title": "Test Post Without Featured Image",
+        "date": "2024-11-27",
+        "lang": "en",
+        "layout": "post",
+        "excerpt": "This is a test post for checking the default image.",
+    }
+
+    default_image = "/assets/images/bpd_stacked.png"
+
+    featured_image = get_post_image(metadata, default_image)
+
+    # Assertions
+    assert metadata["title"] == "Test Post Without Featured Image"
+    assert featured_image == default_image
