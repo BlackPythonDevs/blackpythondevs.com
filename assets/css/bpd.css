@@ -639,7 +639,7 @@ button.next:focus {
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;
-
+}
 .latest-posts-grid {
   display: flex;
   flex-wrap: wrap;
