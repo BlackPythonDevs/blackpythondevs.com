@@ -140,6 +140,7 @@ def test_first_slide_matches_latest_post(page_url: tuple[Page, str]) -> None:
         "/blog",
     ),
 )
+
 def stem_description(
     path: pathlib.Path,
 ) -> Generator[tuple[str, frontmatter.Post], None, None]:

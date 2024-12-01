@@ -627,6 +627,19 @@ button.next:focus {
   background-color: #f9f9f9;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.grid-item {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+
 .latest-posts-grid {
   display: flex;
   flex-wrap: wrap;
