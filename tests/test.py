@@ -88,6 +88,7 @@ def test_headers_in_language(page_url: tuple[Page, str], route: str) -> None:
         ("About Us", "/about/"),
         ("Events", "/events/"),
         ("Community", "/community/"),
+        ("Support", "/support/"),
     ),
 )
 def test_bpdevs_title_en(page_url: tuple[Page, str], title: str, url: str) -> None:
