@@ -511,6 +511,11 @@ ul.speaking-list {
   height: 100%;
 }
 
+.sponsor {
+  display: flex;
+  align-items: center;
+}
+
 /* Adjust sponsors images on smaller screens */
 @media (max-width: 600px) {
   .grid img {
