@@ -21,6 +21,10 @@ updates:
     commit-message:
       prefix: "bundle"
       include: "scope"
+    groups:
+      ruby-deps:
+        patterns:
+          - "*"
 
   # Configuration for pip
   - package-ecosystem: "pip"
@@ -38,3 +42,7 @@ updates:
     commit-message:
       prefix: "pip"
       include: "scope"
+    groups:
+      python-deps:
+        patterns:
+          - "*"
