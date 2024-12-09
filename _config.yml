@@ -30,6 +30,9 @@ navigation:
   - text: Community
     url: /community/
     fa: fa fa-users fa-fw
+  - text: Support Us
+    url: /support/
+    fa: fa-solid fa-money-check-dollar
 
 bpdevs:
   # Minima date format.

@@ -1,7 +1,7 @@
 name: Add Conference
 description: Add Conference dates, location, speaking and other information that you would like shared
 title: "[CONFERENCE] <CONFERENCE NAME> YYYY"
-labels: ["conference"]
+labels: ["conference", "CFP"]
 body:
   - type: input
     id: conference_name
@@ -19,11 +19,17 @@ body:
     validations:
       required: true
   - type: input
-    id: conference_dates
+    id: conference_start_date
     attributes:
-      label: Conference Dates
-      description: The start and end date of the conference.
-      placeholder: "DD (MMM) -DD MMM YYYY"
+      label: Conference Start Date
+      description: The start date of the conference. Use `YEAR-MONTH-DAY`
+      placeholder: "2024-12-31"
+  - type: input
+    id: conference_end_date
+    attributes:
+      label: Conference End Date
+      description: The end date of the conference. The website will no longer show the conference after this date. Use `YEAR-MONTH-DAY` format.
+      placeholder: "2024-12-31"
   - type: dropdown
     id: conference_type
     attributes:
@@ -38,6 +44,22 @@ body:
       label: Conference Location
       description: The location of the conference. Leave blank if online only
       placeholder: "CITY, <REGION>, COUNTRY"
+    validations:
+      required: false
+  - type: input
+    id: cfp_link
+    attributes:
+      label: CFP Link
+      description: Provide the URL for the Call for Proposals (CFP) (make sure to include `https://`).
+      placeholder: "https://example.com/cfp"
+    validations:
+      required: false
+  - type: input
+    id: cfp_deadline
+    attributes:
+      label: CFP Deadline
+      description: Enter the deadline for submitting CFPs (YYYY-MM-DD).
+      placeholder: "YYYY-MM-DD"
     validations:
       required: false
   - type: textarea

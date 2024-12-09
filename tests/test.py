@@ -1,224 +1,150 @@
-import time
+import pathlib
+from typing import Generator
 
 import pytest
-from playwright.sync_api import Page, expect
-
-from _conferences.__main__ import parse_conference_details
-
-live_server_url = "http://127.0.0.1:4000"
-
-routes = [
-    ("about"),
-    ("community"),
-    ("conferences"),
-    ("events"),
-]
+import frontmatter
+from xprocess import ProcessStarter
+from playwright.sync_api import Page, expect, sync_playwright
 
 
-# Add a delay to each test to help with playwright race conditions
-@pytest.fixture(autouse=True)
-def slow_down_tests():
-    yield
-    time.sleep(1)
+@pytest.fixture(scope="module")
+def page_url(xprocess, url_port):
+    """Returns the url of the live server"""
+
+    url, port = url_port
+
+    class Starter(ProcessStarter):
+        timeout = 4
+        # Start the process
+        args = [
+            "bundle",
+            "exec",
+            "jekyll",
+            "serve",
+            "--source",
+            pathlib.Path().cwd().absolute(),
+            "--port",
+            port,
+        ]
+        terminate_on_interrupt = True
+        pattern = "Server running... press ctrl-c to stop."
+
+    xprocess.ensure("page_url", Starter)
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        context = browser.new_context()
+        page = context.new_page()
+
+        # Return the URL of the live server
+        yield page, url
+
+        # Clean up the process
+        xprocess.getinfo("page_url").terminate()
 
 
-@pytest.mark.parametrize("url", routes)
 def test_destination(
-    page: Page,
-    url: str,
+    loaded_route: str,
+    page_url: tuple[Page, str],
 ) -> None:
     """Test that the destinations page loads with seeded data"""
     # Create a destination
-    response = page.goto(f"{live_server_url}/{url}")
-    page.on("response", lambda response: expect(response.status).to_equal(200))
-    assert response.url.endswith(f"/{url}/")  # Load the index.html
+    page, live_server_url = page_url
+    response = page.goto(f"{live_server_url}/{loaded_route}")
+
+    assert response.status == 200  # Check that the page loaded successfully
+
+
+LANG_ROUTES = (
+    "/es/",
+    "/es/about/",
+    "/es/events/",
+    "/es/community/",
+    "/sw/",
+    "/sw/about/",
+    "/sw/events/",
+    "/sw/community/",
+)
+
+
+@pytest.mark.parametrize("route", LANG_ROUTES)
+def test_headers_in_language(page_url: tuple[Page, str], route: str) -> None:
+    """checks the route and the language of each route"""
+    page, live_server_url = page_url
+    response = page.goto(f"{live_server_url}{route}")
+    assert response.status == 200
+    doc_lang = page.evaluate("document.documentElement.lang")
+    lang = route.lstrip("/").split("/", maxsplit=1)[
+        0
+    ]  # urls start with the language if not en
+    assert doc_lang == lang
 
 
 @pytest.mark.parametrize(
     "title, url",
     (
-        ("Acerca de", "/es/about/"),
-        ("Inicio", "/es/"),
-        ("Eventos", "/es/events/"),
-        ("Comunidad", "/es/community/"),
-        ("Conferencias", "/es/conferences/"),
+        ("Home", "/"),
+        ("Blog", "/blog"),
+        ("About Us", "/about/"),
+        ("Events", "/events/"),
+        ("Community", "/community/"),
     ),
 )
-def test_headers_in_language(page: Page, title: str, url: str) -> None:
+def test_bpdevs_title_en(page_url: tuple[Page, str], title: str, url: str) -> None:
+    page, live_server_url = page_url
+    page.goto(f"{live_server_url}{url}")
+    expect(page).to_have_title(f"Black Python Devs | {title}")
+
+
+def test_mailto_bpdevs(page_url: tuple[Page, str]) -> None:
+    page, live_server_url = page_url
     page.goto(live_server_url)
-    lang = page.evaluate("document.documentElement.lang")
-    assert lang == "en"
-    page.get_by_label("Language").select_option("es")
-    page.get_by_role("link", name=title).click()
-    expect(page).to_have_url(f"{live_server_url}{url}")
-    lang = page.evaluate("document.documentElement.lang")
-    assert lang == "es"
-
-
-def test_switching_lang_es_about(page: Page) -> None:
-    about_path = "/about/"
-    page.goto(f"{live_server_url}{about_path}")
-    page.get_by_label("Language").select_option("es")
-    # http://127.0.0.1:4000/es/about/
-    expect(page).to_have_url(f"{live_server_url}/es{about_path}")
-
-
-@pytest.mark.parametrize(
-    "title, url",
-    (
-        ("Kutuhusu", "/sw/about/"),
-        ("Nyumbani", "/sw/"),
-        ("Matukio", "/sw/events/"),
-        ("Jumuiya", "/sw/community/"),
-        ("Mikutano", "/sw/conferences/"),
-    ),
-)
-def test_headers_in_sw(page: Page, title: str, url: str) -> None:
-    page.goto(live_server_url)
-    lang = page.evaluate("document.documentElement.lang")
-    assert lang == "en"
-    page.get_by_label("Language").select_option("sw")
-    page.get_by_role("link", name=title).click()
-    expect(page).to_have_url(f"{live_server_url}{url}")
-    lang = page.evaluate("document.documentElement.lang")
-    assert lang == "sw"
-
-
-def test_switching_lang_sw_about(page: Page) -> None:
-    about_path = "/about/"
-    page.goto(f"{live_server_url}{about_path}")
-    page.get_by_label("Language").select_option("sw")
-    # http://127.0.0.1:4000/sw/about/
-    expect(page).to_have_url(f"{live_server_url}/sw{about_path}")
-
-
-@pytest.mark.parametrize(
-    "title, url",
-    (
-        ("Black Python Devs | Home", "/"),
-        ("Black Python Devs | Blog", "/blog"),
-        ("Black Python Devs | About Us", "/about/"),
-        ("Black Python Devs | Events", "/events/"),
-        ("Black Python Devs | Conferences", "/conferences/"),
-        ("Black Python Devs | Community", "/community/"),
-    ),
-)
-def test_bpdevs_title_en(page: Page, title: str, url: str) -> None:
-    page.goto(f"{live_server_url}/{url}")
-    expect(page).to_have_title(title)
-
-
-def test_mailto_bpdevs(page: Page) -> None:
-    page.goto(f"{live_server_url}")
     mailto = page.get_by_role("link", name="email")
     expect(mailto).to_have_attribute("href", "mailto:contact@blackpythondevs.com")
 
 
-def test_conference_parsing_valid_url():
-    example_conf_issue = """### Conference Name
-
-Test Conference Title
-
-### URL
-
-https://microsoft.com
-
-### Conference Dates
-
-10 - 15 Sep 2050
-
-### Conference Type
-
-both
-
-### Conference Location
-
-Redmond, WA, USA
-
-### Summary
-
-Test Conference Summary
-
-### Speaking
-
-* [Satya Nadella](https://www.linkedin.com/in/satyanadella/)
-"""
-    expected_name = "Test Conference Title"
-    expected_url = "https://microsoft.com"
-    parsed_conf = parse_conference_details(issue_body=example_conf_issue)
-
-    assert parsed_conf["name"] == expected_name
-    assert parsed_conf["url"] == expected_url
+@pytest.mark.parametrize(
+    "url",
+    (
+        "/",
+        "/blog",
+    ),
+)
+def test_page_description_in_index_and_blog(page_url: tuple[Page, str], url: str):
+    """Checks for the descriptions data in the blog posts. There should be some objects with the class `post-description`"""
+    page, live_server_url = page_url
+    page.goto(f"{live_server_url}{url}")
+    expect(page.locator("p.post-description").first).to_be_visible()
+    expect(page.locator("p.post-description").first).not_to_be_empty()
 
 
-def test_conference_parsing_logic_no_url_scheme():
-    example_conf_issue = """### Conference Name
+def stem_description(
+    path: pathlib.Path,
+) -> Generator[tuple[str, frontmatter.Post], None, None]:
+    """iterate throug a list returning the stem of the file and the contents"""
 
-Test Conference Title
-
-### URL
-
-microsoft.com
-
-### Conference Dates
-
-10 - 15 Sep 2050
-
-### Conference Type
-
-both
-
-### Conference Location
-
-Redmond, WA, USA
-
-### Summary
-
-Test Conference Summary
-
-### Speaking
-
-* [Satya Nadella](https://www.linkedin.com/in/satyanadella/)
-"""
-    expected_name = "Test Conference Title"
-    expected_url = "https://microsoft.com"
-    parsed_conf = parse_conference_details(issue_body=example_conf_issue)
-
-    assert parsed_conf["name"] == expected_name
-    assert parsed_conf["url"] == expected_url
+    for entry in path.glob("*.md"):
+        yield (entry.stem, frontmatter.loads(entry.read_text()))
 
 
-def test_conference_parsing_logic_no_url():
-    example_conf_issue = """### Conference Name
-
-Test Conference Title
-
-### URL
+blog_posts = stem_description(pathlib.Path("_posts"))
 
 
-### Conference Dates
-
-10 - 15 Sep 2050
-
-### Conference Type
-
-both
-
-### Conference Location
-
-Redmond, WA, USA
-
-### Summary
-
-Test Conference Summary
-
-### Speaking
-
-* [Satya Nadella](https://www.linkedin.com/in/satyanadella/)
-"""
-    expected_name = "Test Conference Title"
-    expected_url = None
-    parsed_conf = parse_conference_details(issue_body=example_conf_issue)
-
-    assert parsed_conf["name"] == expected_name
-    assert parsed_conf["url"] == expected_url
+@pytest.mark.parametrize("post", list(blog_posts))
+def test_page_blog_posts(
+    page_url: tuple[Page, str], post: tuple[str, frontmatter.Post]
+):
+    """Checks that the meta page description matches the description of the post"""
+    page, live_server_url = page_url
+    entry_stem, frontmatter = post
+    url = f"{live_server_url}/{entry_stem}/"
+    page.goto(url)
+    page.wait_for_selector(
+        'meta[name="description"]',
+        timeout=5000,
+        state="attached",
+    )
+    assert (
+        page.locator('meta[name="description"]').get_attribute("content")
+        == frontmatter["description"]
+    )

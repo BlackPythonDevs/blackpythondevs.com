@@ -1,0 +1,50 @@
+---
+layout: default
+title: "Book Club Page"
+description: "This is the book club page"
+---
+
+<section class="book-club">
+  <h1><strong>Black Python Devs Book Club: A Community of Readers and Learners</strong></h1>
+  <p>The Black Python Devs book club was born from the community's growing passion for technical reading and learning.</p>
+
+  <p>
+    Our goal is to create a welcoming and supportive space where members can share their love of Python development, discuss industry trends, and dive deeper into technical concepts. By reading and discussing books together, we hope to sharpen our
+    skills, connect with like-minded developers, and contribute to the growth of our community.
+  </p>
+
+  <p>The club's leadership is dedicated to building a vibrant and engaging community for everyone. Our initiative aligns with BPD's overall mission to increase participation, empower our members, and provide opportunities for professional growth.</p>
+
+  <h2><strong>Books Completed:</strong></h2>
+
+  {% for book in site.data.books %}
+  <div class="book">
+    <h3>{{ book.title }}</h3>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+
+    <h4>Reviews</h4>
+    {% if book.reviews %}
+    <ul>
+      {% for review in book.reviews %}
+      <li><a href="{{ review.url }}" target="_blank">{{ review.title }}</a> by {{ review.author }}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p><em>No reviews available.</em></p>
+    {% endif %}
+  </div>
+  {% endfor %}
+
+  <h4>Upcoming Books</h4>
+  <ul>
+    {% for upcoming in site.data.upcoming_books %}
+    <li>{{ upcoming.title }} by {{ upcoming.author }} ({{ upcoming.date }})</li>
+    {% endfor %}
+  </ul>
+
+  <h4>Join Today</h4>
+  <p>Our Book club meets twice a month on <a href="https://discord.com/invite/XUc3tFqCT3">Discord</a>.</p>
+</section>
+
+<hr />
+<p>Have a book suggestion? <a href="https://github.com/BlackPythonDevs/blackpythondevs.github.io/issues/new?assignees=&labels=book&projects=&template=add_book.yml&title=%5BBOOK%5D+%3CBOOK+TITLE%3E+BY+AUTHOR">Submit a Suggestion</a></p>
