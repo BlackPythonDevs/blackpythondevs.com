@@ -253,20 +253,6 @@ a.logo-text img {
   margin-left: auto;
 }
 
-.post-meta {
-  color: #000;
-  font-weight: bold;
-}
-
-.post-link {
-  color: #007b95;
-}
-
-.p-author {
-  color: #0099cc;
-  font-weight: bold;
-}
-
 @media only screen and (max-width: 800px) {
   #menu-open {
     display: block;
@@ -494,13 +480,8 @@ img.leadership-photo {
   height: 8rem;
 }
 
-.post-title {
-  color: #007b95;
-}
-
 .post-title > h3 {
   font-size: smaller;
-  color: #007b95;
 }
 
 img.donation-photo {
@@ -513,4 +494,31 @@ img.featured-image {
 
 ul.speaking-list {
   padding-left: 2rem;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* This must be this setting otherwise the window is cropped */
+}
+
+.video-embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sponsor {
+  display: flex;
+  align-items: center;
+}
+
+/* Adjust sponsors images on smaller screens */
+@media (max-width: 600px) {
+  .grid img {
+    max-width: 60%;
+  }
 }
