@@ -48,27 +48,18 @@ Here is a look at our current initiatives? Select to learn more.
 </article>
 </div>
 
-## Leadership Team
+### Regional Leadership Team
 
 <div class="grid" style="display:flex; flex-wrap: wrap; justify-content:center;" markdown="1">
 
-<article class="leadership-photo-container">
-<img class="leadership-photo" alt="photo of Jay" src="https://github.com/kjaymiller.png">
-<p><strong>Jay Miller</strong><br/>
-Executor</p>
-</article>
+{% for leader in site.data.regional_leadership %}
 
 <article class="leadership-photo-container">
-<img class="leadership-photo" alt="photo of Velda" src="https://github.com/VeldaKiara.png">
-<p><strong>Velda Kiara</strong><br/>
-Vice Executor</p>
+<img class="leadership-photo" alt="photo of Afi" src="{{ leader.image }}">
+<p><strong>{{ leader.name }}</strong><br/>
+{{ leader.title }}</p>
 </article>
-
-<article class="leadership-photo-container">
-<img class="leadership-photo" alt="photo of Doreen" src="/assets/images/doreen.png">
-<p><strong>Doreen Nangira</strong><br/>
-Treasurer</p>
-</article>
+{% endfor %}
 </div>
 
 We also vet our actions through our Black Python Devs Leadership Council made up of members who serve as Python Community leaders on a local, regional, or global scale.
