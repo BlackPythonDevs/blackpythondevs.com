@@ -48,6 +48,20 @@ Here is a look at our current initiatives? Select to learn more.
 </article>
 </div>
 
+### Global Leadership Team
+
+<div class="grid" style="display:flex; flex-wrap: wrap; justify-content:center;" markdown="1">
+
+{% for leader in site.data.global_leadership %}
+
+<article class="leadership-photo-container">
+<img class="leadership-photo" alt="photo of Afi" src="{{ leader.image }}">
+<p><strong>{{ leader.name }}</strong><br/>
+{{ leader.title }}</p>
+</article>
+{% endfor %}
+</div>
+
 ### Regional Leadership Team
 
 <div class="grid" style="display:flex; flex-wrap: wrap; justify-content:center;" markdown="1">
