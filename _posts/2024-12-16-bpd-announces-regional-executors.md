@@ -5,6 +5,7 @@ description: Black Python Devs is announcing a major change to leadership at the
 lang: en
 layout: post
 title: Introducing the Regional Leadership Model at Black Python Devs
+featured_image: /assets/images/regional-executors-2024.webp
 ---
 
 As Black Python Devs continues to grow globally, we're excited to announce the appointment of Regional Executors for North America and Africa. These roles are designed to better serve our expanding community while fostering sustainable leadership development.
