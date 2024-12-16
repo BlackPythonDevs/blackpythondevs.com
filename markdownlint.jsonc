@@ -1,0 +1,8 @@
+{
+  // Configure line length settings
+  "MD013": {
+    "line_length": 120, // Set your preferred line length
+    "code_blocks": false, // Don't check code blocks
+    "tables": false // Don't check tables
+  }
+}
