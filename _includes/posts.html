@@ -1,8 +1,8 @@
-{% if site.paginate %}
+<!-- {% if site.paginate %}
   {% assign posts = paginator.posts %}
 {% else %}
   {% assign posts = site.posts %}
-{% endif %}
+{% endif %} -->
 
 {%- if posts.size > 0 -%}
   {%- if page.list_title -%}
@@ -29,7 +29,7 @@
     {%- endfor -%}
   </div>
 
-  {% if site.paginate %}
+  <!-- {% if site.paginate %}
     <div class="pager">
       <ul class="pagination">
       {%- if paginator.previous_page %}
@@ -45,6 +45,6 @@
       {%- endif %}
       </ul>
     </div>
-  {%- endif %}
+  {%- endif %} -->
 
 {%- endif -%}

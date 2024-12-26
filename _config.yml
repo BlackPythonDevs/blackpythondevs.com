@@ -60,6 +60,7 @@ plugins:
   - jemoji
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-paginate
 # - jekyll-seo-tag
 # - jekyll-redirect-from
 # - jekyll-remote-theme
@@ -111,3 +112,6 @@ defaults:
 # Set to `true` to show excerpts on the homepage.
 #
 show_excerpts: true
+
+paginate: 5
+paginate_path: "/blog/page:num/"
