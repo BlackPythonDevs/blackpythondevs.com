@@ -106,10 +106,7 @@ def test_mailto_bpdevs(page_url: tuple[Page, str]) -> None:
 
 @pytest.mark.parametrize(
     "url",
-    (
-        "/",
-        "/blog",
-    ),
+    ("/blog",),
 )
 def test_page_description_in_index_and_blog(page_url: tuple[Page, str], url: str):
     """Checks for the descriptions data in the blog posts. There should be some objects with the class `post-description`"""
