@@ -522,3 +522,38 @@ ul.speaking-list {
     max-width: 60%;
   }
 }
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #007acc;
+}
+
+.pagination a:hover {
+  background-color: #007acc;
+  color: #fff;
+}
+
+.pagination .current {
+  padding: 5px 10px;
+  border: 1px solid #007acc;
+  background-color: #007acc;
+  color: white;
+  border-radius: 4px;
+}
+
+.pagination .disabled {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
