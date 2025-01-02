@@ -4,37 +4,77 @@ lang: en
 title: Support
 ---
 
+<h1>Support Black Python Devs</h1>
 <div id="support">
-  <h2>Support Black Python Devs</h2>
   <article>
-    <div class="grid">
-      <div>
-        <script>
-          (function () {
-            if (document.getElementById("commitchange-script")) return;
-            var npo = 6464;
-            var script = document.createElement("script");
-            var first = document.getElementsByTagName("script")[0];
-            script.setAttribute("data-npo-id", npo);
-            script.id = "commitchange-script";
-            script.src = "https://us.commitchange.com/js/donate-button.v2.js";
-            first.parentNode.insertBefore(script, first);
-          })();
-        </script>
-        <a data-amounts="25,50,100,250,500,1000,1500" class="commitchange-donate" data-designation="Black Python Devs" data-embedded=""></a>
-      </div>
-      <div>
-        <img class="donation-photo" src="/assets/images/gnome_powered_bpd_stacked.png" />
-      </div>
+    <p>
+      Black Python Devs is a Non-Profit, fiscally hosted under the <a href="https://foundation.gnome.org/">GNOME Foundation</a>. The GNOME Foundation does take a percentage for administration costs and support but at least 90% of proceeds goes
+      directly to Black Python Devs General Purpose Fund to support our operational costs and supporting community events in the communtiies of Black Python Developers.
+    </p>
+    <div>
+      <script>
+        (function () {
+          if (document.getElementById("commitchange-script")) return;
+          var npo = 6464;
+          var script = document.createElement("script");
+          var first = document.getElementsByTagName("script")[0];
+          script.setAttribute("data-npo-id", npo);
+          script.id = "commitchange-script";
+          script.src = "https://us.commitchange.com/js/donate-button.v2.js";
+          first.parentNode.insertBefore(script, first);
+        })();
+      </script>
+      <a data-amounts="25,50,100,250,500,1000,1500" class="commitchange-donate" data-designation="Black Python Devs" data-embedded=""></a>
     </div>
   </article>
-  <div>
-    <p>
-      Black Python Devs is a Non-Profit, fiscally hosted under the GNOME Foundation. GNOME does take a percentage for operating costs for our account and administration but at least 90% of proceeds goes directly to Black Python Devs General Purpose
-      Fund as detailed here.
-    </p>
-  </div>
 
+  <article>
+    <h2>Foundational Supporters</h2>
+    <p>Black Python Devs operates primarily on support from individuals. It is those supporters that serve as the foundation for what we do.</p>
+    <p>We would like to recognize our supporters who donate at least $200 each year.</p>
+    <div>
+      <h3>2025</h3>
+      <hr />
+      <ul>
+        {% for supporter in site.data.foundational_supporters['2025'] %}
+        <li>{{supporter}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3>2024</h3>
+      <hr />
+      <div class="grid">
+        <div>
+          <ul>
+            {% for supporter in site.data.foundational_supporters['2024'] limit:10 %}
+            <li>{{supporter}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <ul>
+            {% for supporter in site.data.foundational_supporters['2024'] offset:10 limit:10 %}
+
+            <li>{{supporter}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <ul>
+            {% for supporter in site.data.foundational_supporters['2024'] offset:20 limit:10 %}
+
+            <li>{{supporter}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <p>You can view the archive of supporters<sup>*</sup> by year at https://github.com/blackpythondevs/blackpythondevs.</p>
+      <p>* <sub>Those who marked their desire to remain anonymous have not been included</sub></p>
+    </div>
+  </article>
+
+  <h2>Learn More about Supporting</h2>
   <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform">
     <iframe
       loading="lazy"
