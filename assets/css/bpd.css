@@ -505,7 +505,7 @@ ul.speaking-list {
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
+  gap: 50px;
 }
 
 .footer-col {
@@ -541,4 +541,22 @@ ul.speaking-list {
   margin-top: 20px;
   font-size: 0.875em;
   color: #555;
+}
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-col h3 {
+    font-size: 1.5em;
+  }
+
+  .footer-col ul li a {
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    font-size: 0.75em;
+  }
 }
