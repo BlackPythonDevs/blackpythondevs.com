@@ -1,13 +1,34 @@
 <footer role="contentinfo">
   <div class="wrapper">
-    <nav class="social-links">{%- include social.html -%}</nav>
-    <div class="footer-col-wrapper">
+    <div class="footer-grid">
+      <!-- About Us Section -->
       <div class="footer-col">
-        <a href="/coc/">Code of Conduct</a>
+        <h3>About us</h3>
+        <p>Black Python Devs is a US Non-Profit Organization under the fiscal hosting of the GNOME Foundation. The foundation aims to expand access to Python communities and resources to communities of Black Python Developers around the world.</p>
       </div>
+      <!-- Quick link Section -->
       <div class="footer-col">
-        <small>&copy; {{ 'now' | date: "%Y" }} {{ site.domain }}</small>
+        <h3>Quick link</h3>
+        <ul>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/event/">Events</a></li>
+          <li><a href="/community/">Community</a></li>
+          <li><a href="/support/">Support</a></li>
+        </ul>
       </div>
+      <!-- Contact Us Section -->
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <address>
+          <p>Email: <a href="contact@blackpythondevs.com ">contact@blackpythondevs.com </a></p>
+          <p>Phone: 1234</p>
+          <p>Address: Address</p>
+        </address>
+        <nav>{%- include social.html -%}</nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy; {{ 'now' | date: "%Y" }} {{ site.domain }}</small>
     </div>
   </div>
 </footer>
