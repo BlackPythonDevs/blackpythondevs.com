@@ -37,14 +37,6 @@
       <span class="disabled prev">&larr; Prev</span>
       {%- endif %}
 
-      {%- for page in (1..paginator.total_pages) %}
-      {%- if page == paginator.page %}
-      <span class="current">{{ page }}</span>
-      {%- else %}
-      <a href="{{ paginator.previous_page_path | relative_url | replace: paginator.page, page }}" class="page">{{ page }}</a>
-      {%- endif %}
-      {%- endfor %}
-
       {%- if paginator.next_page %}
       <a href="{{ paginator.next_page_path | relative_url }}" class="next">Next &rarr;</a>
       {%- else %}
