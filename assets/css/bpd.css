@@ -369,19 +369,6 @@ footer {
   margin-left: 0;
 }
 
-.footer-col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.footer-col-wrapper,
-.social-links {
-  font-size: 0.9375rem;
-  color: var(--minima-brand-color);
-}
-
 .social-media-list {
   display: table;
   margin: 0 auto;
@@ -414,26 +401,12 @@ footer {
   vertical-align: text-bottom;
 }
 
-.wrapper {
-  max-width: calc(800px - (30px));
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
 @media screen and (min-width: 800px) {
   .wrapper {
     max-width: calc(800px - (30px * 2));
     padding-right: 30px;
     padding-left: 30px;
   }
-}
-
-.wrapper:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 .page-content {
@@ -523,37 +496,102 @@ ul.speaking-list {
   }
 }
 
-.pagination {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.pagination a {
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.footer-col {
+  padding: 10px;
+}
+
+.footer-col h3 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 5px;
+}
+
+.footer-col ul li a {
   text-decoration: none;
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  color: #007acc;
+  color: #007b95;
+  font-size: 16px;
 }
 
-.pagination a:hover {
-  background-color: #007acc;
-  color: #fff;
+.footer-col address p {
+  margin: 0 0 5px;
 }
 
-.pagination .current {
-  padding: 5px 10px;
-  border: 1px solid #007acc;
-  background-color: #007acc;
-  color: white;
-  border-radius: 4px;
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.875em;
+  color: #555;
 }
 
-.pagination .disabled {
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  color: #aaa;
-  cursor: not-allowed;
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-col h3 {
+    font-size: 1.5em;
+  }
+
+  .footer-col ul li a {
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    font-size: 0.75em;
+  }
+  .pagination {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pagination a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #007acc;
+  }
+
+  .pagination a:hover {
+    background-color: #007acc;
+    color: #fff;
+  }
+
+  .pagination .current {
+    padding: 5px 10px;
+    border: 1px solid #007acc;
+    background-color: #007acc;
+    color: white;
+    border-radius: 4px;
+  }
+
+  .pagination .disabled {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    color: #aaa;
+    cursor: not-allowed;
+  }
 }
