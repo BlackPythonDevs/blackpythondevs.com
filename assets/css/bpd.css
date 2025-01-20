@@ -437,20 +437,10 @@ footer {
   font-style: italic;
 }
 
-.leadership-photo-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.leadership-photo-container > p {
-  text-align: center;
-}
-
 img.leadership-photo {
-  margin: 0 1rem;
   border-radius: 1em;
-  width: 8rem;
-  height: 8rem;
+  width: 5rem;
+  height: 5rem;
 }
 
 .post-title > h3 {

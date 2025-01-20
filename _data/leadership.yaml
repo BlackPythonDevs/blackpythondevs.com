@@ -1,0 +1,42 @@
+Executors:
+  - name: Jay Miller
+    title: Executor
+    image: https://github.com/kjaymiller.png
+    alt: photo of Jayj
+
+  - name: Abigail Afi Gbadago
+    title: Executor (Africa)
+    image: /assets/images/afi.webp
+
+  - name: Emmanuel Ugwu
+    title: Vice-Executor (Africa)
+    image: /assets/images/nuel.webp
+
+  - name: Lazuich Ford
+    title: Executor (North America)
+    image: /assets/images/laz.webp
+
+  - name: Keanya Phelps
+    title: Vice-Executor (North America)
+    image: /assets/images/keanya.webp
+
+Advisors:
+  - name: Damilola Oladele
+    title: Documentation Lead
+
+  - name: Doreen Nangira
+    title: Advisor, Code of Conduct Team Lead
+
+  - name: Benedict Koji Amoah
+    title: Advisor
+
+  - name: Ronald Maravanyika
+    title: Advisor
+
+  - name: Kudzayi Bamhare
+    title: Advisor
+
+  - name: Sandra Ashipala
+    title: Welcoming Team
+
+Council: [Dawn Wages, Sarah Abderemane, Abigail Mesyenrame Dogbe, Velda Kiara, Kojo Idrissa, Aisha Bello, Brayan Kai, Chris Achinga, Denny Perez, Felipe Quieroz, Marlene Mhangami, Monica Oyugi, Ngazetungue Muheue, Steve Yonkeu]
