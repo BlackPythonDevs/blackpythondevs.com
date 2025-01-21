@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Jay Miller",
+    "bio": "Jay is a Staff Developer Advocate based out of Atlanta, GA and the Founder and Executor of Black Python Devs. When away from the keyboard, Jay can often be found cheering on their favorite baseball team.",
+    "bpd_role": "Founder/Global Executor",
+    "social": {
+      "website": "https://kjaymiller.com",
+      "mastodon": "https://mastodon.social/@kjaymiller",
+      "linkedin": "https://linkedin.com/linked/kjaymiller",
+      "youtube": "https://youtube.com/kjaymiller"
+    }
+  },
+  {
+    "name": "Tobias Thomas (Toe•bias HT)",
+    "bio": "Tobias is a former organizer of PyCon Uganda and was the primary organizer for the Black Python Devs ticket sponsorship of PyCon Uganda 2024.",
+    "social": null,
+    "bpd_role": "BPD Council Member | Community Member"
+  },
+  {
+    "name": "Abigail Afi Gbadago",
+    "bio": null,
+    "social": null,
+    "bpd_role": "Executor - Africa"
+  },
+  {
+    "name": "Kafui Alordo",
+    "bio": null,
+    "social": null,
+    "bpd_role": "BPD CouncilMember/Python Ho"
+  }
+]
