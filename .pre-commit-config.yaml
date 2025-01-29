@@ -32,11 +32,7 @@ repos:
     rev: 23.9.1
     hooks:
       - id: black
-  - repo: local
+  - repo: https://github.com/kjaymiller/frontmatter-check
+    rev: "2025.1.1b2"
     hooks:
-      - id: check-for-layout
-        name: check-for-layout
-        files: _posts/.*.md
-        entry: python update_layout.py
-        language: python
-        additional_dependencies: [typer, python-frontmatter, typing-extensions]
+      - id: frontmatter-check

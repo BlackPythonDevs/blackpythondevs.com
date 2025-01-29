@@ -1,0 +1,10 @@
+# Pattern-specific rules
+patterns:
+  - name: "Global Defaults"
+    pattern: "blog./*.md" # match ALL `.md` files
+    rules:
+      - field_name: date
+      - field_name: description
+      - field_name: lang
+      - field_name: layout
+      - field_name: title
