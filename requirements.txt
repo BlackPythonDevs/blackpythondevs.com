@@ -6,11 +6,7 @@ pre-commit
 typer
 
 # Automation
-langchain
-langchain_community
-langchain_ollama
 rich
-python-frontmatter
 
 # Testing
 ephemeral_port_reserve
