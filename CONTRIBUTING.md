@@ -117,7 +117,7 @@ The diagram below explains how information is generated for the about page, show
 
   ![Bundle install terminal](/assets/images/bundle_install_terminal.png)
 
-- Afterwards, run the command `pip install -r requirements-dev.txt` to install the python dev dependencies.
+- Afterwards, run the command `pip install -r requirements.txt` to install the python dev dependencies.
 
   ![Pip install terminal](/assets/images/pip_install_terminal.png)
 
