@@ -9,6 +9,7 @@ typer
 rich
 
 # Testing
+frontmatter
 ephemeral_port_reserve
 pytest-playwright
 pytest-xprocess
