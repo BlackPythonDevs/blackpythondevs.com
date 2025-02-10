@@ -6,11 +6,9 @@ title: Events
 
 # Black Python Devs Events
 
-
 # Upcoming Conferences
 
 Black Python Devs aims to partner with Python conferences around the world to increase the visibility and opportunities for Black leadership in the Python community. We understand that when you put qualified individuals on stage and at conferences it increases their value and opportunities for employment.
-
 
 Here are some highlighted upcoming conferences where you can find Black Python Developers involved on stage or behind the scenes
 
