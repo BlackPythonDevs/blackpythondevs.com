@@ -1,0 +1,26 @@
+{
+    "meetups": [
+        {
+          "name": "Coffee and Code",
+          "date": "2023-09-20",
+          "location": "Online (Discord)",
+          "description": "A casual meetup for developers to code together.",
+          "organizer": "Jay Miller",
+          "topic": "Web Development"
+        },
+        {
+            "name": "Monthly meetup",
+            "date": "2023-09-20",
+            "location": "Remote",
+            "description": "Share ideas, and network over coffee.",
+            "organizer": "Jay Miller",
+            "topic": "Open Source"
+          }
+      ],    
+    "conferences": [
+      
+    ],
+    "partners": [
+  
+    ]
+  }
