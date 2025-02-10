@@ -1,0 +1,24 @@
+{% if site.data.events.meetups.size > 0 %}
+<div class="conference grid">
+  {% for meetup in site.data.events.meetups %}
+  <article>
+    <h2>
+      <a href="https://discord.gg/XUc3tFqCT3">{{ meetup.name }}</a>
+    </h2>
+    <h5>Speaking: {{ meetup.speaker }}</h5>
+    <p>
+      <strong>{{ meetup.date }}</strong><br>
+      <strong>{{ meetup.location }}</strong>
+      </p>
+    <p>{{ meetup.description }}</p>
+    
+      <p>{{ conference.topic }}</p>
+    
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<b>No Meetups</b>
+{% endif %}
+
+<hr />

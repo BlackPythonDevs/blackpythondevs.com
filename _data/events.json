@@ -5,7 +5,7 @@
           "date": "2023-09-20",
           "location": "Online (Discord)",
           "description": "A casual meetup for developers to code together.",
-          "organizer": "Jay Miller",
+          "speaker": "Jay Miller",
           "topic": "Web Development"
         },
         {
@@ -13,7 +13,7 @@
             "date": "2023-09-20",
             "location": "Remote",
             "description": "Share ideas, and network over coffee.",
-            "organizer": "Jay Miller",
+            "speaker": "Jay Miller",
             "topic": "Open Source"
           }
       ],    
