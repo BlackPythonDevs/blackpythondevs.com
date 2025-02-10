@@ -1,34 +1,32 @@
 {
-    "meetups": [
-        {
-          "name": "Coffee and Code",
-          "date": "2023-09-20",
-          "location": "Online (Discord)",
-          "description": "A casual meetup for developers to code together.",
-          "speaker": "Jay Miller",
-          "topic": "Web Development"
-        },
-        {
-            "name": "Monthly meetup",
-            "date": "2023-09-20",
-            "location": "Remote",
-            "description": "Share ideas, and network over coffee.",
-            "speaker": "Jay Miller",
-            "topic": "Open Source"
-          }
-      ],    
-    "conferences": [
-        {
-            "name": "Basics",
-            "url": "",
-            "start_date": "2025-02-10",
-            "end_date": "2025-09-20",
-            "location": "Thailand",
-            "description": "... something good",
-            "speaker": "Tim Osahenru"
-        }
-    ],
-    "partners": [
-  
-    ]
-  }
+  "meetups": [
+    {
+      "name": "Coffee and Code",
+      "date": "2023-09-20",
+      "location": "Online (Discord)",
+      "description": "A casual meetup for developers to code together.",
+      "speaker": "Jay Miller",
+      "topic": "Web Development"
+    },
+    {
+      "name": "Monthly meetup",
+      "date": "2023-09-20",
+      "location": "Remote",
+      "description": "Share ideas, and network over coffee.",
+      "speaker": "Jay Miller",
+      "topic": "Open Source"
+    }
+  ],
+  "conferences": [
+    {
+      "name": "Basics",
+      "url": "",
+      "start_date": "2025-02-10",
+      "end_date": "2025-09-20",
+      "location": "Thailand",
+      "description": "... something good",
+      "speaker": "Tim Osahenru"
+    }
+  ],
+  "partners": []
+}
