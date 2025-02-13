@@ -166,3 +166,42 @@ The diagram below explains how information is generated for the about page, show
   ![Git push terminal](/assets/images/git_push_terminal.png)
 
 - Once you’ve committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. Please ensure that you compare your feature branch to the desired branch of the repo you are supposed to make a PR to. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes in your development branch and update it. 🥳
+
+## Creating an event
+
+Events are currently created manually by adding entries to `_data/events.json`. To create a conference, use the following JSON structure:
+
+```
+{
+  "name": "Conference name",
+  "url": "https://blackpythondevs.com/",
+  "start_date": "2025-02-10",
+  "end_date": "2025-09-20",
+  "location": "Thailand",
+  "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit ...",
+  "speaker": "Tim Osahenru"
+}
+```
+
+### Regular meetups
+
+We have two recurring meetups: **Coffee and Code** and our **Monthly Meetup**. These events remain consistent in format, with only the **date, time, and speaker** subject to change. Updates can be made within the `meetups` list:
+
+```
+ {
+      "name": "Coffee and Code",
+      "date": "2023-09-20",
+      "location": "Online (Discord)",
+      "description": "A casual meetup for developers to code together.",
+      "speaker": "Jay Miller",
+      "topic": "Web Development"
+    },
+    {
+      "name": "Monthly meetup",
+      "date": "2023-09-20",
+      "location": "Remote",
+      "description": "Share ideas, and network over coffee.",
+      "speaker": "Jay Miller",
+      "topic": "Open Source"
+    }
+```

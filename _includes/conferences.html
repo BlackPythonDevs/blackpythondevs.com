@@ -1,25 +1,20 @@
-{% if site.data.conferences.size > 0 %}
+{% if site.data.events.conferences.size > 0 %}
 <div class="conference grid">
-  {% for conference in site.data.conferences %}
+  {% for conference in site.data.events.conferences %}
   <article>
     <h2>
-      <a href="{{ conference.url }}">{{ conference.conference_name }}</a>
+      <a href="{{ conference.url }}">{{ conference.name }}</a>
     </h2>
+    <h5>{{ conference.speaker }}</h5>
     <p>
-      <strong>{{ conference.conference_start_date }} - {{ conference.conference_end_date }}</strong>
+      <strong>{{ conference.start_date }} - {{ conference.end_date }}</strong>
       {% if conference.conference_location != "_No response_" %}
       <br />
-      <strong>{{ conference.conference_location }}</strong>
+      <strong>{{ conference.location }}</strong>
       </p>
       {% endif %}
-    <p>Type: {{ conference.conference_type }}</p>
-    {% if conference.summary != "_No response_" %}
-      {{ conference.summary | markdownify }}
-    {% endif %}
-    {% if conference.speaking %}
-      <h3>Speaking:</h3>
-      {{ conference.speaking | markdownify }}
-    {% endif %}
+    <p>{{ conference.description }}</p>
+
   </article>
   {% endfor %}
 </div>
@@ -28,4 +23,3 @@
 {% endif %}
 
 <hr />
-<p>Have a Conference to Add - <a href="https://github.com/BlackPythonDevs/blackpythondevs.github.io/issues/new?assignees=&labels=conference&projects=&template=add_conference.yml&title=%5BCONFERENCE%5D+%3CCONFERENCE+NAME%3E+YYYY">Submit an Issue</a></p>
